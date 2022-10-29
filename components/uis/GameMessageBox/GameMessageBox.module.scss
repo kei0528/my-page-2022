@@ -1,0 +1,13 @@
+.messageAnime {
+  opacity: 0;
+  animation: message-anime 0 reverse forwards;
+}
+
+@keyframes message-anime {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,5 +1,5 @@
 .gb {
-  @apply h-screen;
+  @apply mx-5 h-[80vh] max-h-[620px] w-full max-w-3xl overflow-hidden rounded-md;
 
   background: linear-gradient(0deg, #ebebeb 6.33%, #f0f0f0 8.33%, #f0f0f0 45%, #ebebeb 50%, #ebebeb 54.33%, #f0f0f0 58.33%, #f0f0f0 100%);
   background-size: 32px 32px;

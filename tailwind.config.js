@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       'colors': {
@@ -16,6 +16,12 @@ module.exports = {
         'light-gb-purple': '#4C53A7',
         'lighter-grey': '#cdcccc',
         'lighter-gb-purple': '#9799ab'
+      },
+      'lineHeight': {
+        'game-md': '26px'
+      },
+      'fontSize': {
+        'game-md': '36px'
       },
       'fontFamily': {
         'body': 'outfit-v6',
