@@ -1,0 +1,1 @@
+export { GameLifeGauge } from './GameLifeGauge';

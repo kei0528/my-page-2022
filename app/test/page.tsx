@@ -1,9 +1,11 @@
+import { GamePlayOptions } from '../../components/triggers/GamePlayOptions';
+import { GameLifeGauge } from '../../components/uis/GameLifeGauge';
 import { GameMessageBox } from '../../components/uis/GameMessageBox';
 
 const Test = () => {
   return (
     <>
-      <GameMessageBox message='TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TESTTEST TEST TEST' />
+      <GameLifeGauge lifeCurr={10} lifeMax={100} />
     </>
   );
 };

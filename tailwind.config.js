@@ -15,7 +15,14 @@ module.exports = {
         'gb-purple': '#3F4595',
         'light-gb-purple': '#4C53A7',
         'lighter-grey': '#cdcccc',
-        'lighter-gb-purple': '#9799ab'
+        'lighter-gb-purple': '#9799ab',
+        'light-beige': '#FBFADC'
+      },
+      'backgroundImage': {
+        'triangle-right': 'url(/assets/icons/Icon_Triangle-right.svg)'
+      },
+      'lineClamp': {
+        2: '2'
       },
       'lineHeight': {
         'game-md': '26px'
@@ -37,6 +44,7 @@ module.exports = {
   plugins: [
     require('tailwindcss-writing-mode')({
       variants: ['responsive', 'hover']
-    })
+    }),
+    require('@tailwindcss/line-clamp')
   ]
 };
