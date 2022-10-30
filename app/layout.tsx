@@ -4,7 +4,7 @@ import { SideNav } from '../components/triggers/SideNav';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html>
+    <html data-lt-installed={true}>
       <head>
         <title>Dev Kei lv.5</title>
         <meta key='viewport' name='viewport' content='initial-scale=1.0, width=device-width' />
