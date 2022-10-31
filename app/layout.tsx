@@ -1,6 +1,8 @@
 import 'modern-css-reset';
 import '../styles/globals.scss';
 import { SideNav } from '../components/triggers/SideNav';
+import { GlobalMenu } from '../components/triggers/GlobalMenu';
+import { Provider } from '../components/triggers/Provider';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -10,8 +12,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta key='viewport' name='viewport' content='initial-scale=1.0, width=device-width' />
       </head>
       <body className='min-h-screen portrait:pb-[60px] landscape:pr-[60px]'>
-        <SideNav />
-        {children}
+        <Provider>
+          <SideNav />
+          <GlobalMenu />
+          {children}
+        </Provider>
       </body>
     </html>
   );
