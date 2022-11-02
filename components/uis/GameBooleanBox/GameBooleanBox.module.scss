@@ -1,0 +1,15 @@
+.btn {
+  @apply relative text-left font-game text-game-md leading-5;
+
+  &:focus-visible {
+    @apply outline-none;
+  }
+
+  &:hover:before,
+  &:focus-visible:before {
+    @apply absolute -left-3 top-2 h-0 w-0 border-t-[4px] border-l-[10px] 
+    border-b-[4px] border-t-transparent
+    border-l-black border-b-transparent
+     content-[''];
+  }
+}
