@@ -16,7 +16,8 @@ module.exports = {
         'light-gb-purple': '#4C53A7',
         'lighter-grey': '#cdcccc',
         'lighter-gb-purple': '#9799ab',
-        'light-beige': '#FBFADC'
+        'light-beige': '#FBFADC',
+        'trans-grey': '#0c0b0b45'
       },
       'backgroundImage': {
         'triangle-right': 'url(/assets/icons/Icon_Triangle-right.svg)'
