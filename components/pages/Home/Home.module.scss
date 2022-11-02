@@ -1,6 +1,36 @@
 .gb {
-  @apply mx-5 h-[80vh] max-h-[620px] w-full max-w-3xl overflow-hidden rounded-md;
+  @apply relative mx-5 h-[80vh] max-h-[620px] w-full max-w-3xl overflow-hidden rounded-md;
 
   background: linear-gradient(0deg, #ebebeb 6.33%, #f0f0f0 8.33%, #f0f0f0 45%, #ebebeb 50%, #ebebeb 54.33%, #f0f0f0 58.33%, #f0f0f0 100%);
   background-size: 32px 32px;
+}
+
+.wrapper {
+  @apply grid h-full portrait:sm:p-5 portrait:md:p-8 landscape:md:p-5 landscape:md:pt-0 lg:p-14;
+
+  grid-template-rows: 1fr auto;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    'life kei'
+    'message message';
+}
+
+.image_wrapper {
+  @apply relative mt-auto flex aspect-[1/1.39] max-w-[270px] items-end justify-end portrait:w-[25vh] portrait:min-w-[195px] landscape:w-[30vh];
+  grid-area: kei;
+}
+
+.img {
+  @apply mt-auto ml-auto;
+  // height: fit-content !important;
+  position: relative !important;
+}
+
+.life_gauge {
+  @apply absolute top-3 left-2 z-10 h-fit w-[45vw] min-w-[250px] max-w-[385px] portrait:sm:top-10 portrait:sm:left-10 landscape:sm:left-12 landscape:sm:top-10 portrait:md:left-14 portrait:md:top-14;
+  grid-area: life;
+}
+
+.message_box {
+  grid-area: message;
 }

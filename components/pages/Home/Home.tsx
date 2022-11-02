@@ -1,5 +1,8 @@
 'use client';
 
+import Image from 'next/image';
+import { GameLifeGauge } from '../../uis/GameLifeGauge';
+import { GameMessageBox } from '../../uis/GameMessageBox';
 import s from './Home.module.scss';
 import { useCompState } from './Home.state';
 
@@ -8,7 +11,15 @@ export const Home = () => {
 
   return (
     <main className='flex items-center justify-center bg-black portrait:h-[calc(100vh-60px)] landscape:h-screen'>
-      <div className={`${s.gb} mx-5 h-[80vh] max-h-[620px] w-full max-w-3xl overflow-hidden rounded-md`}></div>
+      <div className={`${s.gb} mx-5 h-[80vh] max-h-[620px] w-full max-w-3xl overflow-hidden rounded-md`}>
+        <div className={s.wrapper}>
+          <GameLifeGauge className={s.life_gauge} lifeMax={100} lifeCurr={100} />
+          <div className={s.image_wrapper}>
+            <Image src='/assets/images/Image_Keisuke-game.svg' fill className={s.img} alt='' />
+          </div>
+          <GameMessageBox className={s.message_box} message='Test' readmore={true} />
+        </div>
+      </div>
     </main>
   );
 };

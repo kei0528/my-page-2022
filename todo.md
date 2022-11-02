@@ -2,9 +2,11 @@
 
 ## Components
 
-### Uis
+### Page
 
-- [ ] Create boolean-returner <-
+[ ] Create Game Page
+
+### Uis
 
 ### Triggers
 
@@ -26,3 +28,4 @@
 - [x] Create Menu
 - [x] Fix "react_devtools_backend.js:4026 Warning: Extra attributes from the server: data-lt-installed"
 - [x] SCSS sometimes don't work <- class names must be all lowercase
+- [x] Create boolean-returner <-

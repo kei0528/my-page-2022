@@ -1,9 +1,11 @@
 import { v4 as uuid } from 'uuid';
 import s from './GameMessageBox.module.scss';
 
-export const GameMessageBox = ({ message, readmore }: { message: string; readmore: boolean }) => {
+type GameMessageBoxProps = { message: string; readmore: boolean; className?: string };
+
+export const GameMessageBox = ({ message, readmore, className }: GameMessageBoxProps) => {
   return (
-    <div className='relative bg-dark-purple p-2'>
+    <div className={`relative bg-dark-purple p-2 ${className ?? ''}`}>
       <p className='h-36  rounded-md border-x-[16px] border-y-8 border-red bg-turkey px-4 py-6'>
         {message.split('').map((string, index) => {
           return (

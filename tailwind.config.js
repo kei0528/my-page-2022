@@ -19,6 +19,9 @@ module.exports = {
         'light-beige': '#FBFADC',
         'trans-grey': '#0c0b0b45'
       },
+      width: {
+        '1/2vw': '50vw'
+      },
       'backgroundImage': {
         'triangle-right': 'url(/assets/icons/Icon_Triangle-right.svg)'
       },
