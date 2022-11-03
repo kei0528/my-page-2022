@@ -39,6 +39,9 @@ export const GlobalMenu = ({ className }: { className?: string }) => {
       <nav className={`fixed z-40 rounded-lg border-2 border-black bg-dark-purple p-2 duration-100 portrait:top-10 portrait:right-6 landscape:top-16 landscape:right-24 ${isShown ? s.shown : s.hidden} ${className ?? ''}`}>
         <ul className='flex flex-col gap-5 rounded-lg border-2 border-army-green bg-white px-5 py-8'>
           <li>
+            <Link href='/' label='Home' />
+          </li>
+          <li>
             <Link href='/blog' label='Blog' />
           </li>
           <li>
