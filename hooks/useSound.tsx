@@ -12,7 +12,6 @@ export const useSound = () => {
 
   const playGameBgm = useCallback(() => {
     if (soundsOn) {
-      console.log('exe');
       if (typeof gameBgm.current !== 'undefined') {
         gameBgm.current.loop = true;
         gameBgm.current.volume = 0.3;

@@ -22,6 +22,9 @@ module.exports = {
       width: {
         '1/2vw': '50vw'
       },
+      maxWidth: {
+        'page': '800px'
+      },
       'backgroundImage': {
         'triangle-right': 'url(/assets/icons/Icon_Triangle-right.svg)'
       },

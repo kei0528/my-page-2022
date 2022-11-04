@@ -4,8 +4,11 @@
 
 ### Page
 
-[ ] Create Game Page
-[ ] Home.state.tsx is not done yet. Plot condition have to made done.
+- [ ] Create Game Page
+- [ ] Create layout.tsx for sub pages
+- [ ] Create about page
+- [ ] Create contact page
+- [ ] Create blog page
 
 ### Uis
 
@@ -31,3 +34,4 @@
 - [x] Fix "react_devtools_backend.js:4026 Warning: Extra attributes from the server: data-lt-installed"
 - [x] SCSS sometimes don't work <- class names must be all lowercase
 - [x] Create boolean-returner <-
+- [x] Home.state.tsx is not done yet. Plot condition have to made done.
