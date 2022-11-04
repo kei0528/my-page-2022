@@ -3,7 +3,6 @@ import '../styles/globals.scss';
 import { SideNav } from '../components/triggers/SideNav';
 import { GlobalMenu } from '../components/triggers/GlobalMenu';
 import { Provider } from '../components/triggers/Provider';
-import { useEffect } from 'react';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

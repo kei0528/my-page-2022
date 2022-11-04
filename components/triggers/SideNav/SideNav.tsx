@@ -5,7 +5,7 @@ import { useSound } from '../../../hooks/useSound';
 import { toggleGlobalMenuIsShown } from '../../../store/reducers/ui.reducer';
 
 export const SideNav = () => {
-  const { playMenuOpenSound } = useSound();
+  const { playMenuToggleSound } = useSound();
   const dispatch = useDispatch();
 
   return (
@@ -23,7 +23,7 @@ export const SideNav = () => {
           aria-label='Menu'
           onClick={() => {
             dispatch(toggleGlobalMenuIsShown());
-            playMenuOpenSound();
+            playMenuToggleSound();
           }}
         ></button>
       </div>

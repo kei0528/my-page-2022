@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
+import { useSound } from '../../../hooks/useSound';
 import { AppState } from '../../../store';
 import { SettingType } from '../../../store/reducers/setting.reducer';
 import { FirstLoadView } from '../../triggers/FirstLoadView';
@@ -13,10 +14,7 @@ import { useCompState } from './Home.state';
 
 export const Home = () => {
   const userSetting = useSelector<AppState>(state => state.setting) as SettingType;
-  const audioRef = useRef<HTMLAudioElement>(null);
-  useEffect(() => {
-    if (audioRef.current !== null) audioRef.current.volume = 0.2;
-  });
+  const {} = useCompState();
 
   if (!userSetting.userSetted) {
     return <FirstLoadView />;
@@ -34,9 +32,6 @@ export const Home = () => {
             </div>
           </div>
         </main>
-        <audio className='hidden' controls autoPlay={userSetting.soundsOn} ref={audioRef} loop>
-          <source src='/assets/sounds/home.mp3' type='audio/mpeg' />
-        </audio>
       </>
     );
   }

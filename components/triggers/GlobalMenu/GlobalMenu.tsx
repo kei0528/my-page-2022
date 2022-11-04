@@ -48,7 +48,7 @@ const Button = ({ onClick, label }: { onClick?: MouseEventHandler; label: string
 };
 
 export const GlobalMenu = ({ className }: { className?: string }) => {
-  const { playMenuOpenSound } = useSound();
+  const { playMenuToggleSound } = useSound();
   const isShown = useSelector<AppState>(state => state.ui.globalMenu.isShown);
   const dispatch = useDispatch();
 
@@ -60,13 +60,13 @@ export const GlobalMenu = ({ className }: { className?: string }) => {
             <Link href='/' label='Home' />
           </li>
           <li>
-            <Link href='/blog' label='Blog' />
+            <Link href='/v1/blog' label='Blog' />
           </li>
           <li>
-            <Link href='/me' label='Keisuke' />
+            <Link href='/v1/me' label='Keisuke' />
           </li>
           <li>
-            <Link href='/contact' label='Kontakt' />
+            <Link href='/v1/contact' label='Kontakt' />
           </li>
           <li>
             <Button label='Einstellung' />
@@ -80,7 +80,7 @@ export const GlobalMenu = ({ className }: { className?: string }) => {
         className={isShown ? 'fixed top-0 left-0 z-30 h-screen w-screen bg-trans-grey' : ''}
         onClick={() => {
           dispatch(toggleGlobalMenuIsShown());
-          playMenuOpenSound();
+          playMenuToggleSound();
         }}
       />
     </>
