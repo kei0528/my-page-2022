@@ -5,6 +5,7 @@
 ### Page
 
 [ ] Create Game Page
+[ ] Home.state.tsx is not done yet. Plot condition have to made done.
 
 ### Uis
 

@@ -9,7 +9,7 @@ export const GameMessageBox = ({ message, readmore, className }: GameMessageBoxP
       <p className='h-36  rounded-md border-x-[16px] border-y-8 border-red bg-turkey px-4 py-6'>
         {message.split('').map((string, index) => {
           return (
-            <span className={`${s.messageAnime} font-game text-game-md leading-game-md text-white`} style={{ animationDelay: `${index * 0.05}s` }} key={uuid()}>
+            <span className={`${s.message_anime} font-game text-game-md leading-game-md text-white`} style={{ animationDelay: `${index * 0.05 + 0.5}s` }} key={uuid()}>
               {string}
             </span>
           );

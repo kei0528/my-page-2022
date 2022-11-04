@@ -1,9 +1,11 @@
 'use client';
 import Image from 'next/image';
 import { useDispatch } from 'react-redux';
+import { useSound } from '../../../hooks/useSound';
 import { toggleGlobalMenuIsShown } from '../../../store/reducers/ui.reducer';
 
 export const SideNav = () => {
+  const { playMenuOpenSound } = useSound();
   const dispatch = useDispatch();
 
   return (
@@ -15,7 +17,15 @@ export const SideNav = () => {
         <label className='font-bold text-lighter-gb-purple drop-shadow-md landscape:writing-mode-vertical' htmlFor='g-menu'>
           Menu
         </label>
-        <button className='-mb-1 block h-6 w-6 rounded-full bg-lighter-grey shadow-btn shadow-lighter-gb-purple landscape:shadow-btn-vertical landscape:shadow-lighter-gb-purple' id='g-menu' aria-label='Menu' onClick={() => dispatch(toggleGlobalMenuIsShown())}></button>
+        <button
+          className='-mb-1 block h-6 w-6 rounded-full bg-lighter-grey shadow-btn shadow-lighter-gb-purple landscape:shadow-btn-vertical landscape:shadow-lighter-gb-purple'
+          id='g-menu'
+          aria-label='Menu'
+          onClick={() => {
+            dispatch(toggleGlobalMenuIsShown());
+            playMenuOpenSound();
+          }}
+        ></button>
       </div>
       <div className='absolute bottom-full left-0 translate-y-0.5 text-[0] portrait:block landscape:hidden'>
         <Image alt='' src='/assets/bg/gb-lb.svg' width={24} height={28} />

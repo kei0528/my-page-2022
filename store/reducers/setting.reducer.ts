@@ -1,16 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-type SettingType = {
+export type SettingType = {
   language: 'en' | 'de' | 'jp' | 'se';
   gbColor: '#3F4595' | '#EF82B2' | '#E27437' | '#B39A7C' | '#DDDEE2';
-  soundOn: boolean;
+  soundsOn: boolean;
   userSetted: boolean;
 };
 
 const initialState: SettingType = {
   language: 'en',
   gbColor: '#3F4595',
-  soundOn: false,
+  soundsOn: false,
   userSetted: false
 };
 
@@ -25,7 +25,7 @@ export const setting = createSlice({
       state.gbColor = payload;
     },
     toggleSoundOption(state, { payload }: PayloadAction<boolean>) {
-      state.soundOn = payload;
+      state.soundsOn = payload;
     },
     toggleUserSetted(state, { payload }: PayloadAction<boolean>) {
       state.userSetted = payload;
