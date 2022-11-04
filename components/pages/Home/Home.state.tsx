@@ -76,9 +76,16 @@ export const useCompState = ({ messageRef }: { messageRef: RefObject<HTMLParagra
   }, [userSetted, messageRendered, messageRef, currPlot]);
 
   useEffect(() => {
-    window.addEventListener('click', onScreenClick);
+    const events = ['click', 'keypress'];
+    events.forEach(event => {
+      window.addEventListener(event, onScreenClick);
+    });
 
-    return () => window.removeEventListener('click', onScreenClick);
+    return () => {
+      events.forEach(event => {
+        window.removeEventListener(event, onScreenClick);
+      });
+    };
   }, [onScreenClick]);
 
   return { currPlot, setCurrPlot, plot };

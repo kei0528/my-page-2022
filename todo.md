@@ -20,6 +20,7 @@
 - [ ] Add onNextClick props to GameMessageBox component
 - [ ] Use @next/font/local to import fonts
 - [ ] Add Sound
+- [ ] Add Animation to Game Play
 
 ## DONE
 

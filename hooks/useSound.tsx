@@ -5,39 +5,42 @@ import { SettingType } from '../store/reducers/setting.reducer';
 
 export const useSound = () => {
   const { soundsOn } = useSelector<AppState>(state => state.setting) as SettingType;
-  const gameBgm = useMemo(() => new Audio('/assets/sounds/home.mp3'), []);
-  const clickSound = useMemo(() => new Audio('/assets/sounds/click.wav'), []);
-  const hoverSound = useMemo(() => new Audio('/assets/sounds/hover.wav'), []);
-  const menuToggleSound = useMemo(() => new Audio('/assets/sounds/menu-open.mp3'), []);
+  const gameBgm = useRef<HTMLAudioElement | undefined>(typeof Audio !== 'undefined' ? new Audio('/assets/sounds/home.mp3') : undefined);
+  const clickSound = useRef<HTMLAudioElement | undefined>(typeof Audio !== 'undefined' ? new Audio('/assets/sounds/click.wav') : undefined);
+  const hoverSound = useRef<HTMLAudioElement | undefined>(typeof Audio !== 'undefined' ? new Audio('/assets/sounds/hover.wav') : undefined);
+  const menuToggleSound = useRef<HTMLAudioElement | undefined>(typeof Audio !== 'undefined' ? new Audio('/assets/sounds/menu-open.mp3') : undefined);
 
   const playGameBgm = useCallback(() => {
     if (soundsOn) {
       console.log('exe');
-      gameBgm.loop = true;
-      gameBgm.volume = 0.3;
-      gameBgm.play();
+      if (typeof gameBgm.current !== 'undefined') {
+        gameBgm.current.loop = true;
+        gameBgm.current.volume = 0.3;
+      }
+
+      gameBgm.current?.play();
     }
   }, [soundsOn, gameBgm]);
 
   const stopGameBgm = () => {
-    gameBgm.pause();
+    gameBgm.current?.pause();
   };
 
   const playClickSound = useCallback(() => {
     if (soundsOn) {
-      clickSound.play();
+      clickSound.current?.play();
     }
   }, [soundsOn, clickSound]);
 
   const playHoverSound = useCallback(() => {
     if (soundsOn) {
-      hoverSound.play();
+      hoverSound.current?.play();
     }
   }, [soundsOn, hoverSound]);
 
   const playMenuToggleSound = useCallback(() => {
     if (soundsOn) {
-      menuToggleSound.play();
+      menuToggleSound.current?.play();
     }
   }, [soundsOn, menuToggleSound]);
 
