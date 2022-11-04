@@ -53,10 +53,6 @@ export const useCompState = ({ messageRef }: { messageRef: RefObject<HTMLParagra
   }, [currPlot]);
 
   useEffect(() => {
-    console.log('message rendered: ', messageRendered);
-  }, [messageRendered]);
-
-  useEffect(() => {
     checkMessageRendered();
   }, [checkMessageRendered]);
 
