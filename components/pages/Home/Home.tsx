@@ -13,8 +13,9 @@ import s from './Home.module.scss';
 import { useCompState } from './Home.state';
 
 export const Home = () => {
+  const messageRef = useRef<HTMLParagraphElement>(null);
   const userSetting = useSelector<AppState>(state => state.setting) as SettingType;
-  const {} = useCompState();
+  const { plot, currPlot } = useCompState({ messageRef });
 
   if (!userSetting.userSetted) {
     return <FirstLoadView />;
@@ -28,7 +29,7 @@ export const Home = () => {
               <div className={s.image_wrapper}>
                 <Image src='/assets/images/Image_Keisuke-game.svg' fill className={s.img} alt='' />
               </div>
-              <GameMessageBox className={s.message_box} message='Test' readmore={true} />
+              <GameMessageBox messageRef={messageRef} className={s.message_box} message={currPlot !== null ? plot.current[currPlot].message : ''} readmore={true} />
             </div>
           </div>
         </main>
