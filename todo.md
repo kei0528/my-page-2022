@@ -5,8 +5,6 @@
 ### Page
 
 - [ ] Create Game Page
-- [ ] Create layout.tsx for sub pages
-- [ ] Create about page
 - [ ] Create contact page
 
 ### Uis
@@ -37,3 +35,5 @@
 - [x] Create boolean-returner <-
 - [x] Home.state.tsx is not done yet. Plot condition have to made done.
 - [x] Create blog page
+- [x] Create about page
+- [x] Create layout.tsx for sub pages

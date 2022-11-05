@@ -12,7 +12,7 @@ export const Me = () => {
         <div className={`relative mx-auto mt-[-120px] h-40 w-40 overflow-hidden rounded-full border-8 border-white ${s.shadow}`}>
           <Image className=' object-cover object-top' src={profImg} placeholder='blur' fill alt='' />
         </div>
-        <div className='my-12 text-center'>
+        <div className='my-12 text-center text-base sm:text-lg'>
           <h2>Hej! I´m Keisuke!</h2>
           <p></p>
         </div>
