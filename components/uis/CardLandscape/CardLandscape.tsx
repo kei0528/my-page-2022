@@ -12,7 +12,7 @@ export const CardLandscape = () => {
         <div className='h-fit py-3'>
           <h2 className='relative truncate text-base font-bold md:text-xl'>TITLE</h2>
           <div className='mt-5 flex flex-wrap items-center gap-x-10 gap-y-2 '>
-            <div className='flex gap-2'>
+            <div className='flex items-center gap-2'>
               <Image src='/assets/icons/Icon_Tag.svg' alt='Category' width={14} height={14} />
               <ul className='flex flex-wrap'>
                 <li className='rounded bg-lightest-grey py-1 px-2 text-center text-xs'>category</li>

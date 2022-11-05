@@ -8,7 +8,6 @@
 - [ ] Create layout.tsx for sub pages
 - [ ] Create about page
 - [ ] Create contact page
-- [ ] Create blog page
 
 ### Uis
 
@@ -25,6 +24,7 @@
 - [ ] Use @next/font/local to import fonts
 - [ ] Add Sound
 - [ ] Add Animation to Game Play
+- [ ] Let's animate header title
 
 ## DONE
 
@@ -36,3 +36,4 @@
 - [x] SCSS sometimes don't work <- class names must be all lowercase
 - [x] Create boolean-returner <-
 - [x] Home.state.tsx is not done yet. Plot condition have to made done.
+- [x] Create blog page
