@@ -17,6 +17,7 @@
 ## Fixes
 
 - [ ] Fix 100vh on mobile
+- [ ] Game page onclick to next plot behavior. Accept only click on gamescreen.
 
 ## Features
 

@@ -17,7 +17,11 @@ module.exports = {
         'lighter-grey': '#cdcccc',
         'lighter-gb-purple': '#9799ab',
         'light-beige': '#FBFADC',
-        'trans-grey': '#0c0b0b45'
+        'trans-grey': '#0c0b0b45',
+        'lightest-grey': '#ebebeb'
+      },
+      borderWidth: {
+        3: '3px'
       },
       width: {
         '1/2vw': '50vw'

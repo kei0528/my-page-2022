@@ -1,0 +1,7 @@
+.input + * {
+  @apply duration-200;
+}
+
+.input:focus-visible + * {
+  @apply -translate-y-1;
+}

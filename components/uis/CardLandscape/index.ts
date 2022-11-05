@@ -1,0 +1,1 @@
+export { CardLandscape } from './CardLandscape';

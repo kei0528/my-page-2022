@@ -1,5 +1,6 @@
 import NextLink from 'next/link';
 import { ReactElement } from 'react';
+import { BaseMainLayout } from '../../components/uis/BaseMainLayout';
 
 const LinkWrapper = ({ children }: { children: ReactElement }) => {
   return <ul className='flex flex-col gap-2 md:flex-row md:gap-6'>{children}</ul>;
@@ -19,15 +20,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <>
       {children}
-      <footer className='mx-5 '>
+      <footer className='mx-5 sm:mx-8'>
         <div className='mx-auto flex max-w-page justify-between border-t border-lighter-grey px-2 pt-8 sm:p-8 sm:pt-12'>
           <div className='flex flex-col gap-14 md:gap-7'>
             <LinkWrapper>
               <>
                 <Link href='/' label='Home' />
-                <Link href='/me' label='Me' />
-                <Link href='/blog' label='Blog' />
-                <Link href='/contact' label='Contact' />
+                <Link href='/v1/me' label='Me' />
+                <Link href='/v1/blog' label='Blog' />
+                <Link href='/v1/contact' label='Contact' />
               </>
             </LinkWrapper>
             <LinkWrapper>
