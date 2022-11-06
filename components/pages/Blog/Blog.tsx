@@ -3,7 +3,14 @@ import { CardLandscape } from '../../uis/CardLandscape';
 import { Header } from '../../uis/Header';
 import { SearchBar } from '../../uis/SearchBar';
 
-export const Blog = () => {
+async function getBlogs() {
+  const res = await fetch('http://localhost:3001/api/blogs');
+  return res.json();
+}
+
+const Blog = async () => {
+  const data = await getBlogs();
+  console.log('data', data);
   return (
     <>
       <Header intro='Check my' headline='Blog' />
@@ -18,3 +25,5 @@ export const Blog = () => {
     </>
   );
 };
+
+export default Blog;

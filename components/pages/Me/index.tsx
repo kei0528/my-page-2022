@@ -1,1 +1,2 @@
-export { Me } from './Me';
+import Me from './Me';
+export default Me;

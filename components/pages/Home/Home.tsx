@@ -12,7 +12,7 @@ import { GameMessageBox } from '../../uis/GameMessageBox';
 import s from './Home.module.scss';
 import { useCompState } from './Home.state';
 
-export const Home = () => {
+const Home = () => {
   const messageRef = useRef<HTMLParagraphElement>(null);
   const userSetting = useSelector<AppState>(state => state.setting) as SettingType;
   const { plot, currPlot } = useCompState({ messageRef });
@@ -37,3 +37,5 @@ export const Home = () => {
     );
   }
 };
+
+export default Home;

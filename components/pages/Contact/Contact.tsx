@@ -3,7 +3,7 @@ import { BaseMainLayout } from '../../uis/BaseMainLayout';
 import { Header } from '../../uis/Header';
 import Image from 'next/image';
 
-export const Contact = () => {
+const Contact = () => {
   return (
     <>
       <Header intro="Let's have a chat!" headline='Contact' />
@@ -22,3 +22,5 @@ export const Contact = () => {
     </>
   );
 };
+
+export default Contact;
