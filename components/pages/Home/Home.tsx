@@ -1,9 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { useSelector } from 'react-redux';
-import { useSound } from '../../../hooks/useSound';
 import { AppState } from '../../../store';
 import { SettingType } from '../../../store/reducers/setting.reducer';
 import { FirstLoadView } from '../../triggers/FirstLoadView';
