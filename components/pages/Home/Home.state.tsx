@@ -1,23 +1,28 @@
-import { RefObject, useCallback, useEffect, useRef, useState } from 'react';
+import { MouseEventHandler, RefObject, useCallback, useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useSound } from '../../../hooks/useSound';
 import { AppState } from '../../../store';
 
-export const useCompState = ({ messageRef }: { messageRef: RefObject<HTMLParagraphElement> }) => {
+export const useCompState = ({ messageRef, mainRef }: { messageRef: RefObject<HTMLParagraphElement>; mainRef: RefObject<HTMLElement> }) => {
   const { playGameBgm, stopGameBgm } = useSound();
   const userSetted = useSelector<AppState>(state => state.setting.userSetted);
-  const [currPlot, setCurrPlot] = useState<number | null>(null);
+  const [currPlot, setCurrPlot] = useState<number>(0);
   const [messageRendered, setMessageRendered] = useState(false);
   const liveInDESince = useRef(new Date().getFullYear() - 2007);
   const plot = useRef([
     { message: 'Ein wilder Keisuke erscheint!', option: null },
     {
       message: 'Was möchtest du tun?',
-      option: [
-        { label: 'Ansprechen', handler: '' },
-        { label: 'Blog lesen', handler: '' },
-        { label: 'Kontaktieren', handler: '' },
-        { label: 'Angreifen', handler: '' }
+      options: [
+        {
+          label: 'Hallo sagen',
+          handler: () => {
+            console.log('hello!');
+          }
+        },
+        { label: 'Blog lesen', handler: () => {} },
+        { label: 'Angreifen', handler: () => {} },
+        { label: 'Fliehen', handler: () => {} }
       ]
     }
   ]);
@@ -56,37 +61,38 @@ export const useCompState = ({ messageRef }: { messageRef: RefObject<HTMLParagra
     checkMessageRendered();
   }, [checkMessageRendered]);
 
-  // Handle Onclick window / Moving to next plot
+  // Handle Onclick main element (to next plot)
   const onScreenClick = useCallback(() => {
     // ↓User have to finish initial page setup first
     if (!userSetted) return;
 
     // ↓On last item of plot, prevent user to move to next plot
-    if (messageRendered && currPlot !== null && currPlot + 1 === plot.current.length) return;
+    if (messageRendered && currPlot + 1 === plot.current.length) return;
 
     // ↓When rendering of all strings is not done yet, force to render all strings by clicking window
-    if (!messageRendered && currPlot !== null) {
+    if (!messageRendered) {
       const strings = messageRef.current?.querySelectorAll('span');
       strings!.forEach(string => (string.style.opacity = '1'));
       setMessageRendered(true);
     } else {
       // ↓ If all condition passed, move to next plot!
-      setCurrPlot(state => (state === null ? 0 : state + 1));
+      setCurrPlot(state => state + 1);
     }
   }, [userSetted, messageRendered, messageRef, currPlot]);
 
   useEffect(() => {
     const events = ['click', 'keypress'];
+    const main = mainRef.current;
     events.forEach(event => {
-      window.addEventListener(event, onScreenClick);
+      main?.addEventListener(event, onScreenClick);
     });
 
     return () => {
       events.forEach(event => {
-        window.removeEventListener(event, onScreenClick);
+        main?.removeEventListener(event, onScreenClick);
       });
     };
-  }, [onScreenClick]);
+  }, [onScreenClick, mainRef]);
 
   return { currPlot, setCurrPlot, plot };
 };

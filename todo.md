@@ -17,7 +17,6 @@
 ## Fixes
 
 - [ ] Fix 100vh on mobile
-- [ ] Game page onclick to next plot behavior. Accept only click on gamescreen.
 - [ ] first load page align center on larger screen (add max-w-page?)
 
 ## Features
@@ -44,3 +43,4 @@
 - [x] Create about page
 - [x] Create layout.tsx for sub pages
 - [x] Create contact page
+- [x] Game page onclick to next plot behavior. Accept only click on gamescreen.

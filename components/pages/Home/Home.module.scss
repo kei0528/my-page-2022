@@ -6,7 +6,7 @@
 }
 
 .wrapper {
-  @apply grid h-full portrait:sm:p-5 portrait:md:p-8 landscape:md:p-5 landscape:md:pt-0 lg:p-14;
+  @apply grid h-full portrait:sm:p-2 portrait:md:p-3 landscape:md:p-5 landscape:md:pt-0 lg:p-4;
 
   grid-template-rows: 1fr auto;
   grid-template-columns: 1fr auto;

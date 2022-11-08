@@ -1,4 +1,4 @@
-import React, { LegacyRef, MutableRefObject, RefObject, useEffect } from 'react';
+import React, { RefObject } from 'react';
 import { v4 as uuid } from 'uuid';
 import s from './GameMessageBox.module.scss';
 
@@ -10,7 +10,7 @@ export const GameMessageBox = React.memo(({ message, readmore, className, messag
       <p className='h-36  rounded-md border-x-[16px] border-y-8 border-red bg-turkey px-4 py-6' ref={messageRef}>
         {message.split('').map((string, index) => {
           return (
-            <span className={`${s.message_anime} font-game text-game-md leading-game-md text-white`} style={{ animationDelay: `${index * 0.05 + 0.5}s` }} key={uuid()}>
+            <span className='message-anime font-game text-game-md leading-game-md text-white' style={{ animationDelay: `${index * 0.05 + 0.5}s` }} key={uuid()}>
               {string}
             </span>
           );

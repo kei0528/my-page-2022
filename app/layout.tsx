@@ -1,5 +1,6 @@
 import 'modern-css-reset';
 import '../styles/globals.scss';
+import '../styles/generics.scss';
 import { SideNav } from '../components/triggers/SideNav';
 import { GlobalMenu } from '../components/triggers/GlobalMenu';
 import { Provider } from '../components/triggers/Provider';

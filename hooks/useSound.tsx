@@ -11,7 +11,7 @@ export const useSound = () => {
   const menuToggleSound = useRef<HTMLAudioElement | undefined>(typeof Audio !== 'undefined' ? new Audio('/assets/sounds/menu-open.mp3') : undefined);
 
   const playGameBgm = useCallback(() => {
-    if (soundsOn) {
+    if (!!soundsOn) {
       if (typeof gameBgm.current !== 'undefined') {
         gameBgm.current.loop = true;
         gameBgm.current.volume = 0.3;
