@@ -11,7 +11,7 @@ export const SideNav = () => {
   return (
     <nav className='fixed bottom-0 z-50 flex w-screen justify-between bg-gb-purple px-2 py-3 landscape:right-0 landscape:h-screen landscape:w-fit landscape:flex-col-reverse landscape:py-5 landscape:pl-4'>
       <a className='flex h-8 w-8 translate-y-1 items-center justify-center rounded-full bg-lighter-grey shadow-btn shadow-lighter-gb-purple landscape:shadow-btn-vertical landscape:shadow-lighter-gb-purple ' href='https://github.com/kei0528' target='_blank' rel='noreferrer'>
-        <Image className='landscape:rotate-90 ' alt='Github' src='/assets/icons/Icon_Github.svg' width={20} height={20} />
+        <Image className='landscape:rotate-90 ' alt='Github' src='/assets/icons/Icon_Github.svg' priority width={20} height={20} />
       </a>
       <div className='relative flex h-fit items-center gap-2 rounded-full bg-light-gb-purple px-3 py-2 leading-3 shadow-btn-inner landscape:flex-col landscape:pr-1 landscape:pl-2'>
         <label className='font-bold text-lighter-gb-purple drop-shadow-md landscape:writing-mode-vertical' htmlFor='g-menu'>

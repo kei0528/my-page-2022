@@ -9,7 +9,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html data-lt-installed={true}>
       <head>
-        <title>Dev Kei lv.5</title>
+        <title>&lt; DevKei lv=5 /&gt;</title>
         <meta key='viewport' name='viewport' content='initial-scale=1.0, width=device-width' />
       </head>
       <body className='min-h-screen portrait:pb-[60px] landscape:pr-[60px]'>

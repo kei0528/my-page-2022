@@ -1,0 +1,20 @@
+.template_html {
+  h1,
+  h2 {
+    @apply my-2 text-lg font-semibold md:text-xl;
+  }
+
+  h3 {
+    @apply my-2 text-base font-bold md:text-lg;
+  }
+
+  h4,
+  h5,
+  h6 {
+    @apply my-2 text-sm font-bold md:text-base;
+  }
+
+  p {
+    @apply my-1;
+  }
+}

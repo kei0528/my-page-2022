@@ -1,7 +1,5 @@
-import React, { MouseEventHandler, useRef } from 'react';
-import { v4 as uuid } from 'uuid';
+import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { sessionStorageServices } from '../../../utils/sessionStorageServices';
 import { toggleSoundOption, toggleUserSetted } from '../../../store/reducers/setting.reducer';
 import s from './FirstLoadView.module.scss';
 import { GameMessage } from '../../uis/GameMessage';

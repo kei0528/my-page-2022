@@ -12,8 +12,8 @@ export type SettingType = {
 const initialState: SettingType = {
   language: 'en',
   gbColor: '#3F4595',
-  soundsOn: sessionStorageServices.get(ssKeys.soundsOn),
-  userSetted: sessionStorageServices.get(ssKeys.userSetted)
+  soundsOn: sessionStorageServices.get(ssKeys.soundsOn) ?? false,
+  userSetted: sessionStorageServices.get(ssKeys.userSetted) ?? false
 };
 
 export const setting = createSlice({

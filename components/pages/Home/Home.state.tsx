@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { MouseEventHandler, RefObject, useCallback, useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useSound } from '../../../hooks/useSound';
@@ -9,6 +10,7 @@ export const useCompState = ({ messageRef, mainRef }: { messageRef: RefObject<HT
   const [currPlot, setCurrPlot] = useState<number>(0);
   const [messageRendered, setMessageRendered] = useState(false);
   const liveInDESince = useRef(new Date().getFullYear() - 2007);
+  const router = useRouter();
   const plot = useRef([
     { message: 'Ein wilder Keisuke erscheint!', option: null },
     {
@@ -22,7 +24,12 @@ export const useCompState = ({ messageRef, mainRef }: { messageRef: RefObject<HT
         },
         { label: 'Blog lesen', handler: () => {} },
         { label: 'Angreifen', handler: () => {} },
-        { label: 'Fliehen', handler: () => {} }
+        {
+          label: 'Flucht',
+          handler: () => {
+            router?.push('/v1/contact');
+          }
+        }
       ]
     }
   ]);
@@ -72,7 +79,8 @@ export const useCompState = ({ messageRef, mainRef }: { messageRef: RefObject<HT
     // ↓When rendering of all strings is not done yet, force to render all strings by clicking window
     if (!messageRendered) {
       const strings = messageRef.current?.querySelectorAll('span');
-      strings!.forEach(string => (string.style.opacity = '1'));
+      if (!strings?.length) return;
+      strings.forEach(string => (string.style.opacity = '1'));
       setMessageRendered(true);
     } else {
       // ↓ If all condition passed, move to next plot!
