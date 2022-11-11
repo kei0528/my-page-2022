@@ -122,14 +122,9 @@ export const useCompState = ({
       { message: 'You used Tackle!', options: null, returnToOption: false },
       {
         message:
-          lifeGauge.curr <= 0 ? 'Keisuke fainted!' : lifeGauge.curr <= 40 ? 'Keisuke is weak!' : 'Kisuke is sad!',
+          lifeGauge.curr <= 0 ? 'Keisuke fainted!' : lifeGauge.curr <= 40 ? 'Keisuke is weak!' : 'Keisuke is sad!',
         options: null,
         returnToOption: lifeGauge.curr > 0,
-      },
-      {
-        message: 'Keisuke fainted!',
-        options: null,
-        returnToOption: false,
       },
       {
         message: 'Want check another page?',
