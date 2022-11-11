@@ -1,8 +1,13 @@
 .gb {
-  @apply relative mx-5 h-[80vh] max-h-[620px] w-full max-w-3xl overflow-hidden rounded-md;
+  @apply relative mx-5 h-[80vh] max-h-[490px] w-full max-w-2xl overflow-hidden rounded-md;
 
   background: linear-gradient(0deg, #ebebeb 6.33%, #f0f0f0 8.33%, #f0f0f0 45%, #ebebeb 50%, #ebebeb 54.33%, #f0f0f0 58.33%, #f0f0f0 100%);
   background-size: 32px 32px;
+
+  @media (max-width: 440px) {
+    height: 90vh;
+    max-height: 600px;
+  }
 }
 
 .wrapper {
@@ -16,7 +21,7 @@
 }
 
 .image_wrapper {
-  @apply relative mt-auto flex aspect-[1/1.39] max-w-[270px] items-end justify-end portrait:w-[25vh] portrait:min-w-[195px] landscape:w-[30vh];
+  @apply relative mt-auto flex aspect-[1/1.39] max-w-[200px] items-end justify-end portrait:w-[25vh] portrait:min-w-[195px] landscape:w-[30vh];
   grid-area: kei;
 }
 
@@ -27,7 +32,7 @@
 }
 
 .life_gauge {
-  @apply absolute top-3 left-2 z-10 h-fit w-[45vw] min-w-[250px] max-w-[385px] portrait:sm:top-10 portrait:sm:left-10 landscape:sm:left-12 landscape:sm:top-10 portrait:md:left-14 portrait:md:top-14;
+  @apply absolute top-3 left-2 z-10 h-fit w-[50vw] min-w-[250px] max-w-[385px] portrait:sm:top-10 portrait:sm:left-10 landscape:sm:left-12 landscape:sm:top-10 portrait:md:left-14 portrait:md:top-14;
   grid-area: life;
 }
 

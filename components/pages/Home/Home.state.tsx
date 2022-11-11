@@ -1,39 +1,72 @@
-import { useRouter } from 'next/router';
-import { MouseEventHandler, RefObject, useCallback, useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { RefObject, useCallback, useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useSound } from '../../../hooks/useSound';
 import { AppState } from '../../../store';
 
+export type PlotType = { message: string; options: { label: string; handler: () => void }[] | null };
+
 export const useCompState = ({ messageRef, mainRef }: { messageRef: RefObject<HTMLParagraphElement>; mainRef: RefObject<HTMLElement> }) => {
   const { playGameBgm, stopGameBgm } = useSound();
   const userSetted = useSelector<AppState>(state => state.setting.userSetted);
+  const [lifeGauge, setLifeGauge] = useState<{ max: number; curr: number }>({ max: 100, curr: 100 });
   const [currPlot, setCurrPlot] = useState<number>(0);
+  const [plotExeptions, setPlotExeptions] = useState<PlotType | null>(null);
   const [messageRendered, setMessageRendered] = useState(false);
-  const liveInDESince = useRef(new Date().getFullYear() - 2007);
   const router = useRouter();
-  const plot = useRef([
-    { message: 'Ein wilder Keisuke erscheint!', option: null },
+  const plot = useRef<PlotType[]>([
+    { message: 'Wild Keisuke appeared!', options: null },
     {
-      message: 'Was möchtest du tun?',
+      message: 'What should I do?',
       options: [
         {
-          label: 'Hallo sagen',
+          label: 'Say hi',
           handler: () => {
-            console.log('hello!');
+            toNextPlot();
           }
         },
-        { label: 'Blog lesen', handler: () => {} },
-        { label: 'Angreifen', handler: () => {} },
         {
-          label: 'Flucht',
+          label: 'Read blog',
           handler: () => {
-            router?.push('/v1/contact');
+            router.push('/v1/blog');
+          }
+        },
+        {
+          label: 'Fight',
+          handler: () => {
+            setPlotExeptions({ message: 'You used Tackle!', options: null });
+            mainRef.current!.classList.add('attack');
+            const damageAmount = Math.floor(Math.random() * 15) + 15;
+            console.log('damageAmount', damageAmount);
+            // After attack
+            setTimeout(() => {
+              mainRef.current!.classList.remove('attack');
+              setLifeGauge(state => ({ ...state, curr: state.curr - damageAmount <= 0 ? 0 : state.curr - damageAmount }));
+            }, 1000);
+            // After life gauge changed
+          }
+        },
+        {
+          label: 'Write mail',
+          handler: () => {
+            router.push('/v1/contact');
           }
         }
       ]
+    },
+    {
+      message: "Hej! I'm Keisuke from Japan!",
+      options: null
+    },
+    {
+      message: 'I love programming and coffee!',
+      options: null
     }
   ]);
-  const introduction = useRef(['Hej! Ich bin Keisuke, der Frontend Developer aus Japan!', `Ich wohne seit ${liveInDESince.current} Jahren.`, 'Ich liebe Programmieren, Pilze sammeln und Kaffee!']);
+
+  const toNextPlot = () => {
+    setCurrPlot(state => state + 1);
+  };
 
   // Sound
   useEffect(() => {
@@ -73,8 +106,14 @@ export const useCompState = ({ messageRef, mainRef }: { messageRef: RefObject<HT
     // ↓User have to finish initial page setup first
     if (!userSetted) return;
 
-    // ↓On last item of plot, prevent user to move to next plot
-    if (messageRendered && currPlot + 1 === plot.current.length) return;
+    // ↓if options appear, prevent user to move to next plot
+    if (plot.current[currPlot].options !== null) return;
+
+    // ↓On last plot, go back to second plot
+    if (currPlot + 1 === plot.current.length) {
+      setCurrPlot(1);
+      return;
+    }
 
     // ↓When rendering of all strings is not done yet, force to render all strings by clicking window
     if (!messageRendered) {
@@ -84,7 +123,7 @@ export const useCompState = ({ messageRef, mainRef }: { messageRef: RefObject<HT
       setMessageRendered(true);
     } else {
       // ↓ If all condition passed, move to next plot!
-      setCurrPlot(state => state + 1);
+      toNextPlot();
     }
   }, [userSetted, messageRendered, messageRef, currPlot]);
 
@@ -102,5 +141,5 @@ export const useCompState = ({ messageRef, mainRef }: { messageRef: RefObject<HT
     };
   }, [onScreenClick, mainRef]);
 
-  return { currPlot, setCurrPlot, plot };
+  return { currPlot, plot, lifeGauge };
 };

@@ -2,9 +2,10 @@
 
 import { MouseEvent, MouseEventHandler } from 'react';
 import { v4 as uuid } from 'uuid';
+import { PlotType } from '../../pages/Home/Home.state';
 import { GameMessage } from '../../uis/GameMessage';
 
-export type GamePlayOptionsProp = { options?: { label: string; handler: () => void }[]; message: string; className?: string };
+export type GamePlayOptionsProp = PlotType & { className?: string };
 
 export const GamePlayOptions = ({ options, message, className }: GamePlayOptionsProp) => {
   if (!options) throw Error('Options are required');

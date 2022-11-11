@@ -6,7 +6,7 @@ type GameLifeGauge = {
 
 export const GameLifeGauge = ({ lifeMax, lifeCurr, className }: GameLifeGauge) => {
   const lifeGaaugePercentage = (lifeCurr / lifeMax) * 100;
-  const lifeGaugeColor = lifeGaaugePercentage > 30 ? '#54D57C' : lifeGaaugePercentage > 10 ? '#f4dc47' : '#D24938';
+  const lifeGaugeColor = lifeGaaugePercentage > 40 ? '#54D57C' : lifeGaaugePercentage > 10 ? '#f4dc47' : '#D24938';
 
   return (
     <div className={`relative rounded-bl rounded-tr rounded-tl-3xl bg-army-green p-2 ${className ?? ''}`}>
