@@ -15,22 +15,44 @@ import { useCompState } from './Home.state';
 const Home = () => {
   const mainRef = useRef<HTMLElement>(null);
   const messageRef = useRef<HTMLParagraphElement>(null);
-  const userSetting = useSelector<AppState>(state => state.setting) as SettingType;
-  const { plot, currPlot, lifeGauge } = useCompState({ messageRef, mainRef });
+  const imageRef = useRef<HTMLDivElement>(null);
+  const userSetting = useSelector<AppState>((state) => state.setting) as SettingType;
+  const { plot, currPlot, lifeGauge } = useCompState({
+    messageRef,
+    mainRef,
+    imageRef,
+  });
 
   if (!userSetting.userSetted) {
     return <FirstLoadView />;
   } else {
     return (
       <>
-        <main ref={mainRef} className='flex items-center justify-center bg-black portrait:h-[calc(100vh-60px)] landscape:h-screen'>
+        <main
+          ref={mainRef}
+          className="flex items-center justify-center bg-black portrait:h-[calc(100vh-60px)] landscape:h-screen"
+        >
           <div className={`${s.gb} mx-5 h-[80vh] max-h-[480px] w-full max-w-3xl overflow-hidden rounded-md`}>
             <div className={s.wrapper}>
               <GameLifeGauge className={s.life_gauge} lifeMax={lifeGauge.max} lifeCurr={lifeGauge.curr} />
-              <div className={s.image_wrapper}>
-                <Image src='/assets/images/Image_Keisuke-game.webp' fill className={s.img} alt='' />
+              <div className={s.image_wrapper} ref={imageRef}>
+                <Image src="/assets/images/Image_Keisuke-game.webp" fill className={s.img} alt="" />
               </div>
-              {!plot.current[currPlot].options ? <GameMessageBox className={s.message_box} messageRef={messageRef} message={currPlot !== null ? plot.current[currPlot].message : ''} readmore={true} /> : <GamePlayOptions className={s.message_box} message={plot.current[currPlot].message} options={plot.current[currPlot].options} />}
+              {!plot[currPlot].options ? (
+                <GameMessageBox
+                  className={s.message_box}
+                  messageRef={messageRef}
+                  message={currPlot !== null ? plot[currPlot].message : ''}
+                  readmore={true}
+                />
+              ) : (
+                <GamePlayOptions
+                  className={s.message_box}
+                  message={plot[currPlot].message}
+                  options={plot[currPlot].options}
+                  returnToOption={plot[currPlot].returnToOption}
+                />
+              )}
             </div>
           </div>
         </main>

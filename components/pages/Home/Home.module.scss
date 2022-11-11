@@ -1,7 +1,16 @@
 .gb {
   @apply relative mx-5 h-[80vh] max-h-[490px] w-full max-w-2xl overflow-hidden rounded-md;
 
-  background: linear-gradient(0deg, #ebebeb 6.33%, #f0f0f0 8.33%, #f0f0f0 45%, #ebebeb 50%, #ebebeb 54.33%, #f0f0f0 58.33%, #f0f0f0 100%);
+  background: linear-gradient(
+    0deg,
+    #ebebeb 6.33%,
+    #f0f0f0 8.33%,
+    #f0f0f0 45%,
+    #ebebeb 50%,
+    #ebebeb 54.33%,
+    #f0f0f0 58.33%,
+    #f0f0f0 100%
+  );
   background-size: 32px 32px;
 
   @media (max-width: 440px) {
@@ -22,20 +31,79 @@
 
 .image_wrapper {
   @apply relative mt-auto flex aspect-[1/1.39] max-w-[200px] items-end justify-end portrait:w-[25vh] portrait:min-w-[195px] landscape:w-[30vh];
+
+  animation: appearing 1s 0.1s 1 forwards;
   grid-area: kei;
 }
 
 .img {
   @apply mt-auto ml-auto;
-  // height: fit-content !important;
+  animation: appearing-img 1.5s 0.1s forwards;
   position: relative !important;
+
+  &:global(.attacked) {
+    animation: attacked 1s forwards;
+  }
 }
 
 .life_gauge {
   @apply absolute top-3 left-2 z-10 h-fit w-[50vw] min-w-[250px] max-w-[385px] portrait:sm:top-10 portrait:sm:left-10 landscape:sm:left-12 landscape:sm:top-10 portrait:md:left-14 portrait:md:top-14;
+  animation: appearing-life-gauge 1.5s 0.1s forwards;
   grid-area: life;
 }
 
 .message_box {
   grid-area: message;
+}
+
+@keyframes appearing {
+  0% {
+    transform: translateX(120px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes appearing-img {
+  0% {
+    filter: brightness(0.5);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+
+@keyframes appearing-life-gauge {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes attacked {
+  0% {
+    transform: translateX(0px);
+    filter: brightness(0.5);
+  }
+  25% {
+    transform: translateX(-10px);
+    filter: brightness(1);
+  }
+  50% {
+    transform: translateX(10px);
+    filter: brightness(0.5);
+  }
+  75% {
+    transform: translateX(-10px);
+    filter: brightness(1);
+  }
+  100% {
+    transform: translateX(0px);
+    filter: brightness(0.5);
+  }
 }

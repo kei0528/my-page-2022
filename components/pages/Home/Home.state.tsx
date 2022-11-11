@@ -1,101 +1,190 @@
 import { useRouter } from 'next/navigation';
-import { RefObject, useCallback, useEffect, useRef, useState } from 'react';
+import { RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useSound } from '../../../hooks/useSound';
 import { AppState } from '../../../store';
 
-export type PlotType = { message: string; options: { label: string; handler: () => void }[] | null };
+export type PlotType = {
+  message: string;
+  returnToOption: boolean;
+  options: { label: string; handler: () => void }[] | null;
+};
 
-export const useCompState = ({ messageRef, mainRef }: { messageRef: RefObject<HTMLParagraphElement>; mainRef: RefObject<HTMLElement> }) => {
-  const { playGameBgm, stopGameBgm } = useSound();
-  const userSetted = useSelector<AppState>(state => state.setting.userSetted);
+export const useCompState = ({
+  messageRef,
+  mainRef,
+  imageRef,
+}: {
+  messageRef: RefObject<HTMLParagraphElement>;
+  mainRef: RefObject<HTMLElement>;
+  imageRef: RefObject<HTMLDivElement>;
+}) => {
+  const { playGameBgm, stopGameBgm, playAttackSound, playFaintedSound, playGameOverBgm, stopGameOverBgm } = useSound();
+  const userSetted = useSelector<AppState>((state) => state.setting.userSetted);
   const [lifeGauge, setLifeGauge] = useState<{ max: number; curr: number }>({ max: 100, curr: 100 });
   const [currPlot, setCurrPlot] = useState<number>(0);
-  const [plotExeptions, setPlotExeptions] = useState<PlotType | null>(null);
   const [messageRendered, setMessageRendered] = useState(false);
   const router = useRouter();
-  const plot = useRef<PlotType[]>([
-    { message: 'Wild Keisuke appeared!', options: null },
-    {
-      message: 'What should I do?',
-      options: [
-        {
-          label: 'Say hi',
-          handler: () => {
-            toNextPlot();
-          }
-        },
-        {
-          label: 'Read blog',
-          handler: () => {
-            router.push('/v1/blog');
-          }
-        },
-        {
-          label: 'Fight',
-          handler: () => {
-            setPlotExeptions({ message: 'You used Tackle!', options: null });
-            mainRef.current!.classList.add('attack');
-            const damageAmount = Math.floor(Math.random() * 15) + 15;
-            console.log('damageAmount', damageAmount);
-            // After attack
-            setTimeout(() => {
-              mainRef.current!.classList.remove('attack');
-              setLifeGauge(state => ({ ...state, curr: state.curr - damageAmount <= 0 ? 0 : state.curr - damageAmount }));
-            }, 1000);
-            // After life gauge changed
-          }
-        },
-        {
-          label: 'Write mail',
-          handler: () => {
-            router.push('/v1/contact');
-          }
-        }
-      ]
-    },
-    {
-      message: "Hej! I'm Keisuke from Japan!",
-      options: null
-    },
-    {
-      message: 'I love programming and coffee!',
-      options: null
-    }
-  ]);
+  const plot: PlotType[] = useMemo(
+    () => [
+      { message: 'Wild Keisuke appeared!', options: null, returnToOption: false },
+      {
+        message: 'What should I do?',
+        returnToOption: false,
+        options: [
+          {
+            label: 'Say Hi',
+            handler: () => {
+              toNextPlot();
+            },
+          },
+          {
+            label: 'Read Blog',
+            handler: () => {
+              router.push('/v1/blog');
+            },
+          },
+          {
+            label: 'Fight',
+            handler: () => {
+              playAttackSound();
+              const imgElm = imageRef.current!.querySelector('img');
+              imgElm!.classList.add('attacked');
+              setCurrPlot(10);
+
+              const damageAmount = Math.floor(Math.random() * 15) + 15;
+              // After attack
+              setTimeout(() => {
+                imgElm!.classList.remove('attacked');
+                setLifeGauge((state) => {
+                  const lifeGaugeUpdatged = state.curr - damageAmount;
+                  if (lifeGaugeUpdatged <= 0) {
+                    playFaintedSound();
+                    imgElm!.classList.add('fainted');
+                  }
+
+                  return {
+                    ...state,
+                    curr: state.curr - damageAmount <= 0 ? 0 : state.curr - damageAmount,
+                  };
+                });
+              }, 1000);
+            },
+          },
+          {
+            label: 'Write Mail',
+            handler: () => {
+              router.push('/v1/contact');
+            },
+          },
+        ],
+      },
+      {
+        message: "Hej! I'm Keisuke from Japan!",
+        options: null,
+        returnToOption: false,
+      },
+      {
+        message: 'I was a barista for many years. I love coffee!',
+        options: null,
+        returnToOption: false,
+      },
+      {
+        message: 'Now I changed my job and am a frontend developer!',
+        options: null,
+        returnToOption: false,
+      },
+      {
+        message: 'I love programming!',
+        options: null,
+        returnToOption: false,
+      },
+      {
+        message: 'I used TypeScript + Next.js for building this page,',
+        options: null,
+        returnToOption: false,
+      },
+      {
+        message: 'Tailwind CSS for making this place beautiful,',
+        options: null,
+        returnToOption: false,
+      },
+      {
+        message: 'and Redux for helping me store states.',
+        options: null,
+        returnToOption: false,
+      },
+      {
+        message: 'Hope you like this place!',
+        options: null,
+        returnToOption: true,
+      },
+      { message: 'You used Tackle!', options: null, returnToOption: false },
+      {
+        message:
+          lifeGauge.curr <= 0 ? 'Keisuke fainted!' : lifeGauge.curr <= 40 ? 'Keisuke is weak!' : 'Kisuke is sad!',
+        options: null,
+        returnToOption: lifeGauge.curr > 0,
+      },
+      {
+        message: 'Keisuke fainted!',
+        options: null,
+        returnToOption: false,
+      },
+      {
+        message: 'Want check another page?',
+        options: [
+          { label: 'Blog', handler: () => router.push('/v1/blog') },
+          { label: 'About', handler: () => router.push('/v1/me') },
+          { label: 'Contact', handler: () => router.push('/v1/contact') },
+          { label: 'Github', handler: () => (window.location.href = 'https://github.com/kei0528') },
+        ],
+        returnToOption: true,
+      },
+    ],
+    [lifeGauge.curr, playAttackSound, imageRef, router, playFaintedSound]
+  );
 
   const toNextPlot = () => {
-    setCurrPlot(state => state + 1);
+    setCurrPlot((state) => state + 1);
   };
 
   // Sound
   useEffect(() => {
-    playGameBgm();
+    if (lifeGauge.curr !== 0) {
+      playGameBgm();
+    } else {
+      stopGameBgm();
+      setTimeout(() => {
+        playGameOverBgm();
+      }, 1000);
+    }
 
     return () => {
       stopGameBgm();
+      stopGameBgm();
     };
-  }, [playGameBgm, stopGameBgm]);
+  }, [playGameBgm, stopGameBgm, lifeGauge, playGameOverBgm]);
 
   // Check if all strings of message rendered.
   const checkMessageRendered = useCallback(() => {
     if (currPlot === null) return;
+    setMessageRendered(false);
 
     const renderDelay = 0.5;
     const renderDurationPerString = 0.05;
-    const currentMessageLength = plot.current[currPlot].message.length;
+    const currentMessageLength = plot[currPlot].message.length;
     const totalDuration = renderDelay + currentMessageLength * renderDurationPerString;
 
-    setMessageRendered(false);
     const timer = setTimeout(() => {
       setMessageRendered(true);
     }, totalDuration * 1000);
 
     return () => {
       clearTimeout(timer);
-      setMessageRendered(false);
+      setMessageRendered(true);
     };
-  }, [currPlot]);
+  }, [currPlot, plot]);
 
   useEffect(() => {
     checkMessageRendered();
@@ -107,35 +196,42 @@ export const useCompState = ({ messageRef, mainRef }: { messageRef: RefObject<HT
     if (!userSetted) return;
 
     // ↓if options appear, prevent user to move to next plot
-    if (plot.current[currPlot].options !== null) return;
-
-    // ↓On last plot, go back to second plot
-    if (currPlot + 1 === plot.current.length) {
-      setCurrPlot(1);
-      return;
-    }
+    if (plot[currPlot].options !== null) return;
 
     // ↓When rendering of all strings is not done yet, force to render all strings by clicking window
     if (!messageRendered) {
       const strings = messageRef.current?.querySelectorAll('span');
       if (!strings?.length) return;
-      strings.forEach(string => (string.style.opacity = '1'));
+      strings.forEach((string) => (string.style.opacity = '1'));
       setMessageRendered(true);
-    } else {
-      // ↓ If all condition passed, move to next plot!
-      toNextPlot();
+      return;
     }
-  }, [userSetted, messageRendered, messageRef, currPlot]);
+
+    // ↓if returnToOption is true, than return to plot[1]
+    if (!!plot[currPlot].returnToOption) {
+      setCurrPlot(1);
+      return;
+    }
+
+    // ↓On last plot, go back to second plot
+    if (currPlot + 1 === plot.length) {
+      setCurrPlot(1);
+      return;
+    }
+
+    // ↓ If all condition passed, move to next plot!
+    toNextPlot();
+  }, [userSetted, messageRendered, messageRef, currPlot, plot]);
 
   useEffect(() => {
     const events = ['click', 'keypress'];
     const main = mainRef.current;
-    events.forEach(event => {
+    events.forEach((event) => {
       main?.addEventListener(event, onScreenClick);
     });
 
     return () => {
-      events.forEach(event => {
+      events.forEach((event) => {
         main?.removeEventListener(event, onScreenClick);
       });
     };
