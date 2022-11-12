@@ -17,11 +17,11 @@ type BlogPostType = {
 }[];
 
 async function getBlogPosts() {
-  const files = fs.readdirSync(path.join('posts'));
+  const files = fs.readdirSync(path.join('public/posts'));
 
   const proceccedPosts = files.map((filename) => {
     const slug = filename.replace('.md', '');
-    const markdownWithMeta = fs.readFileSync(path.join('blogs', filename), 'utf-8');
+    const markdownWithMeta = fs.readFileSync(path.join('public/posts', filename), 'utf-8');
     const { data: frontmatter } = matter(markdownWithMeta);
     return { slug, frontmatter };
   }) as unknown;
