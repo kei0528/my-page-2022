@@ -5,7 +5,7 @@ import { BaseMainLayout } from '../../uis/BaseMainLayout';
 import { CardLandscape } from '../../uis/CardLandscape';
 import { Header } from '../../uis/Header';
 import { SearchBar } from '../../uis/SearchBar';
-import { useEffect } from 'react';
+import { urls } from '../../../statics/urls';
 
 type BlogPostType = {
   slug: string;
@@ -18,7 +18,7 @@ type BlogPostType = {
 }[];
 
 async function getBlogPosts() {
-  const res = await fetch('https://my-page-2022-kei0528.vercel.app/api/blog');
+  const res = await fetch(urls.baseUrl + '/api/blog');
   const data = await res.json();
   return data as BlogPostType;
 }

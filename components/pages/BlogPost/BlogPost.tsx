@@ -4,9 +4,10 @@ import { marked } from 'marked';
 import { Header } from '../../uis/Header';
 import { BaseMainLayout } from '../../uis/BaseMainLayout';
 import Link from 'next/link';
+import { urls } from '../../../statics/urls';
 
 async function getPost({ slug }: { slug: string }) {
-  const data = await fetch('https://my-page-2022-kei0528.vercel.app/api/blog/' + slug);
+  const data = await fetch(urls.baseUrl + '/api/blog/' + slug);
   const res = await data.json();
   return res;
 }
