@@ -1,10 +1,11 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
+// import fs from 'fs';
+// import path from 'path';
+// import matter from 'gray-matter';
 import { BaseMainLayout } from '../../uis/BaseMainLayout';
 import { CardLandscape } from '../../uis/CardLandscape';
 import { Header } from '../../uis/Header';
 import { SearchBar } from '../../uis/SearchBar';
+import { useEffect } from 'react';
 
 type BlogPostType = {
   slug: string;
@@ -17,20 +18,15 @@ type BlogPostType = {
 }[];
 
 async function getBlogPosts() {
-  const files = fs.readdirSync(path.join('public/posts'));
-
-  const proceccedPosts = files.map((filename) => {
-    const slug = filename.replace('.md', '');
-    const markdownWithMeta = fs.readFileSync(path.join('public/posts', filename), 'utf-8');
-    const { data: frontmatter } = matter(markdownWithMeta);
-    return { slug, frontmatter };
-  }) as unknown;
-  const posts = proceccedPosts as BlogPostType;
-  return posts;
+  const res = await fetch('https://my-page-2022-kei0528.vercel.app/api/blog');
+  const data = await res.json();
+  return data as BlogPostType;
 }
 
 const Blog = async () => {
   const posts = await getBlogPosts();
+  console.log('posts', posts);
+
   return (
     <>
       <Header intro="Check my" headline="Blog" />

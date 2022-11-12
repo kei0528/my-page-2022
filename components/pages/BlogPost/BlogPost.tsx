@@ -1,22 +1,14 @@
 import s from './BlogPost.module.scss';
-import fs from 'fs';
-import path from 'path';
 import Image from 'next/image';
-import matter from 'gray-matter';
 import { marked } from 'marked';
 import { Header } from '../../uis/Header';
 import { BaseMainLayout } from '../../uis/BaseMainLayout';
 import Link from 'next/link';
 
 async function getPost({ slug }: { slug: string }) {
-  const markdownWithMeta = fs.readFileSync(path.join('public/posts', slug + '.md'), 'utf-8');
-  const { data: frontmatter, content } = matter(markdownWithMeta);
-
-  return {
-    frontmatter,
-    content,
-    slug,
-  };
+  const data = await fetch('https://my-page-2022-kei0528.vercel.app/api/blog/' + slug);
+  const res = await data.json();
+  return res;
 }
 
 const BlogPost = async ({ params }: { params?: any }) => {
