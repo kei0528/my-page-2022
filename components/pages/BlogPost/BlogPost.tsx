@@ -9,7 +9,7 @@ import { BaseMainLayout } from '../../uis/BaseMainLayout';
 import Link from 'next/link';
 
 async function getPost({ slug }: { slug: string }) {
-  const markdownWithMeta = fs.readFileSync(path.join('blogs', slug + '.md'), 'utf-8');
+  const markdownWithMeta = fs.readFileSync(path.join('posts', slug + '.md'), 'utf-8');
   const { data: frontmatter, content } = matter(markdownWithMeta);
 
   return {
