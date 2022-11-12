@@ -1,3 +1,3 @@
 export const urls = {
-  baseUrl: 'https://my-page-2022.vercel.app/',
+  baseUrl: process.env.NEXT_PUBLIC_VERCEL_URL || 'http://localhost:3000',
 };
