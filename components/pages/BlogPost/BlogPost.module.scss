@@ -1,11 +1,11 @@
 .template_html {
   h1,
   h2 {
-    @apply my-2 text-lg font-semibold md:text-xl;
+    @apply mb-3 mt-8 text-lg font-semibold md:mt-10 md:text-xl;
   }
 
   h3 {
-    @apply my-2 text-base font-bold md:text-lg;
+    @apply mb-2 mt-4 text-base font-bold md:text-lg;
   }
 
   h4,
@@ -15,6 +15,10 @@
   }
 
   p {
-    @apply my-1;
+    @apply my-2 leading-7 md:leading-8;
+  }
+
+  hr {
+    @apply my-6;
   }
 }

@@ -12,8 +12,8 @@ export type SettingType = {
 const initialState: SettingType = {
   language: 'en',
   gbColor: '#3F4595',
-  soundsOn: sessionStorageServices.get(ssKeys.soundsOn) ?? false,
-  userSetted: sessionStorageServices.get(ssKeys.userSetted) ?? false
+  soundsOn: false,
+  userSetted: false,
 };
 
 export const setting = createSlice({
@@ -35,10 +35,13 @@ export const setting = createSlice({
     toggleUserSetted(state, { payload }: PayloadAction<boolean>) {
       sessionStorageServices.set(ssKeys.userSetted, payload);
       state.userSetted = payload;
-    }
-  }
+    },
+    setSettings(state, { payload }: PayloadAction<SettingType>) {
+      state = payload;
+    },
+  },
 });
 
-export const { changeLang, changeGbColor, toggleSoundOption, toggleUserSetted } = setting.actions;
+export const { changeLang, changeGbColor, toggleSoundOption, toggleUserSetted, setSettings } = setting.actions;
 
 export default setting.reducer;

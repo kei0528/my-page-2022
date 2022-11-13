@@ -18,6 +18,8 @@
 
 - [ ] Fix 100vh on mobile
 - [ ] first load page align center on larger screen (add max-w-page?)
+- [ ] Fix Error: Hydration failed because the initial UI does not match what was rendered on the server. Probably session storage causes the error.
+- [ ] Remove grey pixel next to portrait
 
 ## Features
 

@@ -1,13 +1,8 @@
-// 'use client';
-// import fs from 'fs';
-// import path from 'path';
-// import matter from 'gray-matter';
 import { BaseMainLayout } from '../../uis/BaseMainLayout';
 import { CardLandscape } from '../../uis/CardLandscape';
 import { Header } from '../../uis/Header';
 import { SearchBar } from '../../uis/SearchBar';
 import { urls } from '../../../statics/urls';
-import useSWR from 'swr';
 
 type BlogPostType = {
   slug: string;
@@ -26,16 +21,6 @@ async function getBlogPosts() {
 }
 
 const Blog = async () => {
-  // const fetcher = async (url: string) => {
-  //   const res = await fetch(url);
-  //   const data = await res.json();
-  //   return data as BlogPostType;
-  // };
-
-  // const { data } = useSWR('/api/blog', fetcher);
-  // // const posts = await getBlogPosts();
-  // const posts = data;
-  // console.log('posts', posts);
   const posts = await getBlogPosts();
 
   return (

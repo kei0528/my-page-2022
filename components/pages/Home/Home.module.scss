@@ -1,3 +1,6 @@
+.main {
+}
+
 .gb {
   @apply relative mx-5 h-[80vh] max-h-[490px] w-full max-w-2xl overflow-hidden rounded-md;
 
@@ -12,6 +15,20 @@
     #f0f0f0 100%
   );
   background-size: 32px 32px;
+
+  &:global(.fainted) {
+    background: linear-gradient(
+      0deg,
+      #cacaca 6.33%,
+      #bdbdbd 8.33%,
+      #bdbdbd 45%,
+      #cacaca 50%,
+      #cacaca 54.33%,
+      #bdbdbd 58.33%,
+      #bdbdbd 100%
+    );
+    background-size: 32px 32px;
+  }
 
   @media (max-width: 440px) {
     height: 90vh;
@@ -44,12 +61,20 @@
   &:global(.attacked) {
     animation: attacked 1s forwards;
   }
+
+  &:global(.fainted) {
+    animation: fainted 0.6s forwards;
+  }
 }
 
 .life_gauge {
   @apply absolute top-3 left-2 z-10 h-fit w-[50vw] min-w-[250px] max-w-[385px] portrait:sm:top-10 portrait:sm:left-10 landscape:sm:left-12 landscape:sm:top-10 portrait:md:left-14 portrait:md:top-14;
   animation: appearing-life-gauge 1.5s 0.1s forwards;
   grid-area: life;
+
+  &:global(.fainted) {
+    filter: brightness(0.75);
+  }
 }
 
 .message_box {
@@ -105,5 +130,29 @@
   100% {
     transform: translateX(0px);
     filter: brightness(0.5);
+  }
+}
+
+@keyframes fainted {
+  0% {
+    filter: brightness(0.5);
+  }
+  1% {
+    filter: brightness(1);
+    transform: translateX(10px);
+  }
+  2% {
+    filter: brightness(0.5);
+    transform: translateX(-10px);
+  }
+  3% {
+    filter: brightness(0.1);
+    transform: translateX(0px);
+  }
+  10% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translateY(100vh);
   }
 }

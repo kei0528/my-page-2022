@@ -1,8 +1,11 @@
 import { useRouter } from 'next/navigation';
 import { RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useSound } from '../../../hooks/useSound';
+import { ssKeys } from '../../../statics/sessionStorageKeys';
 import { AppState } from '../../../store';
+import { setSettings, SettingType } from '../../../store/reducers/setting.reducer';
+import { sessionStorageServices } from '../../../utils/sessionStorageServices';
 
 export type PlotType = {
   message: string;
@@ -13,12 +16,17 @@ export type PlotType = {
 export const useCompState = ({
   messageRef,
   mainRef,
+  gbRef,
   imageRef,
+  lifeGaugeRef,
 }: {
+  gbRef: RefObject<HTMLDivElement>;
   messageRef: RefObject<HTMLParagraphElement>;
   mainRef: RefObject<HTMLElement>;
+  lifeGaugeRef: RefObject<HTMLDivElement>;
   imageRef: RefObject<HTMLDivElement>;
 }) => {
+  const dispatch = useDispatch();
   const { playGameBgm, stopGameBgm, playAttackSound, playFaintedSound, playGameOverBgm, stopGameOverBgm } = useSound();
   const userSetted = useSelector<AppState>((state) => state.setting.userSetted);
   const [lifeGauge, setLifeGauge] = useState<{ max: number; curr: number }>({ max: 100, curr: 100 });
@@ -41,7 +49,7 @@ export const useCompState = ({
           {
             label: 'Read Blog',
             handler: () => {
-              router.push('/v1/blog');
+              router.push('/v1/my-blog');
             },
           },
           {
@@ -52,7 +60,7 @@ export const useCompState = ({
               imgElm!.classList.add('attacked');
               setCurrPlot(10);
 
-              const damageAmount = Math.floor(Math.random() * 15) + 15;
+              const damageAmount = Math.floor(Math.random() * 15) + 30;
               // After attack
               setTimeout(() => {
                 imgElm!.classList.remove('attacked');
@@ -60,6 +68,8 @@ export const useCompState = ({
                   const lifeGaugeUpdatged = state.curr - damageAmount;
                   if (lifeGaugeUpdatged <= 0) {
                     playFaintedSound();
+                    gbRef!.current?.classList.add('fainted');
+                    lifeGaugeRef!.current?.classList.add('fainted');
                     imgElm!.classList.add('fainted');
                   }
 
@@ -129,20 +139,31 @@ export const useCompState = ({
       {
         message: 'Want check another page?',
         options: [
-          { label: 'Blog', handler: () => router.push('/v1/blog') },
-          { label: 'About', handler: () => router.push('/v1/me') },
+          { label: 'Blog', handler: () => router.push('/v1/my-blog') },
+          { label: 'About', handler: () => router.push('/v1/about-me') },
           { label: 'Contact', handler: () => router.push('/v1/contact') },
           { label: 'Github', handler: () => (window.location.href = 'https://github.com/kei0528') },
         ],
         returnToOption: true,
       },
     ],
-    [lifeGauge.curr, playAttackSound, imageRef, router, playFaintedSound]
+    [lifeGauge.curr, playAttackSound, imageRef, router, playFaintedSound, gbRef, lifeGaugeRef]
   );
 
   const toNextPlot = () => {
     setCurrPlot((state) => state + 1);
   };
+
+  // Set localstorage data to Redux at first render
+  useEffect(() => {
+    const localStorageData: SettingType = {
+      language: sessionStorageServices.get(ssKeys.language) ?? 'en',
+      gbColor: sessionStorageServices.get(ssKeys.gbColor) ?? '#3F4595',
+      soundsOn: sessionStorageServices.get(ssKeys.soundsOn) ?? false,
+      userSetted: sessionStorageServices.get(ssKeys.userSetted) ?? false,
+    };
+    dispatch(setSettings(localStorageData));
+  }, [dispatch]);
 
   // Sound
   useEffect(() => {

@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useEffect } from 'react';
 import { useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { AppState } from '../../../store';
@@ -16,14 +17,18 @@ const Home = () => {
   const mainRef = useRef<HTMLElement>(null);
   const messageRef = useRef<HTMLParagraphElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
-  const userSetting = useSelector<AppState>((state) => state.setting) as SettingType;
+  const lifeGaugeRef = useRef<HTMLDivElement>(null);
+  const gbRef = useRef<HTMLDivElement>(null);
+  const { userSetted } = useSelector<AppState>((state) => state.setting) as SettingType;
   const { plot, currPlot, lifeGauge } = useCompState({
     messageRef,
     mainRef,
+    gbRef,
     imageRef,
+    lifeGaugeRef,
   });
 
-  if (!userSetting.userSetted) {
+  if (!userSetted) {
     return <FirstLoadView />;
   } else {
     return (
@@ -32,9 +37,17 @@ const Home = () => {
           ref={mainRef}
           className="flex items-center justify-center bg-black portrait:h-[calc(100vh-60px)] landscape:h-screen"
         >
-          <div className={`${s.gb} mx-5 h-[80vh] max-h-[480px] w-full max-w-3xl overflow-hidden rounded-md`}>
+          <div
+            className={`${s.gb} mx-5 h-[80vh] max-h-[480px] w-full max-w-3xl overflow-hidden rounded-md`}
+            ref={gbRef}
+          >
             <div className={s.wrapper}>
-              <GameLifeGauge className={s.life_gauge} lifeMax={lifeGauge.max} lifeCurr={lifeGauge.curr} />
+              <GameLifeGauge
+                className={s.life_gauge}
+                lifeMax={lifeGauge.max}
+                lifeCurr={lifeGauge.curr}
+                ref={lifeGaugeRef}
+              />
               <div className={s.image_wrapper} ref={imageRef}>
                 <Image src="/assets/images/Image_Keisuke-game.webp" fill className={s.img} alt="" />
               </div>

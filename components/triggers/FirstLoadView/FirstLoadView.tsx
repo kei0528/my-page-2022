@@ -23,19 +23,22 @@ export const FirstLoadView = React.memo(() => {
   const message = useRef('Do you want turn on the sound?');
 
   return (
-    <div className='h-screen bg-black p-5 sm:p-8'>
+    <main className="h-screen bg-black p-5 sm:p-8">
       <p>
         <GameMessage message={message.current} />
       </p>
-      <ul style={{ animationDelay: `${message.current.length / 15 + 1}s` }} className='message-anime mt-10 flex w-fit flex-col gap-4 border border-b-4 border-r-4 border-white py-8 px-12'>
+      <ul
+        style={{ animationDelay: `${message.current.length / 15 + 1}s` }}
+        className="message-anime mt-10 flex w-fit flex-col gap-4 border border-b-4 border-r-4 border-white py-8 px-12"
+      >
         <li>
-          <Btn label='Yes' option={true} />
+          <Btn label="Yes" option={true} />
         </li>
         <li>
-          <Btn label='No' option={false} />
+          <Btn label="No" option={false} />
         </li>
       </ul>
-    </div>
+    </main>
   );
 });
 
