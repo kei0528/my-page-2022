@@ -22,7 +22,7 @@ const BlogPost = async ({ params }: { params?: any }) => {
         <article className="relative z-10 -mt-36 mb-16 min-h-[320px] rounded-2xl bg-white px-5 pt-8 pb-10 shadow-lg duration-300 hover:-translate-y-1 hover:shadow-xl sm:mx-auto sm:w-11/12 sm:px-8 sm:pt-12 sm:pb-16 md:w-10/12">
           <Link
             className="mb-9 flex w-fit gap-2 text-sm text-black duration-200 hover:-translate-y-1 md:text-base"
-            href="/my-blog"
+            href="/v1/blog"
           >
             <Image src="/assets/icons/Icon_Arrow-left.svg" width={16} height={24} alt="" />
             Back

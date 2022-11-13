@@ -64,7 +64,7 @@ export const GlobalMenu = ({ className }: { className?: string }) => {
             <Link href="/" label="Home" />
           </li>
           <li>
-            <Link href="/my-blog" label="Blog" />
+            <Link href="/v1/blog" label="Blog" />
           </li>
           <li>
             <Link href="/v1/me" label="Keisuke" />

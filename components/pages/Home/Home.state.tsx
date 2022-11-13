@@ -49,7 +49,7 @@ export const useCompState = ({
           {
             label: 'Read Blog',
             handler: () => {
-              router.push('/my-blog');
+              router.push('/v1/blog');
             },
           },
           {
@@ -139,7 +139,7 @@ export const useCompState = ({
       {
         message: 'Want check another page?',
         options: [
-          { label: 'Blog', handler: () => router.push('/my-blog') },
+          { label: 'Blog', handler: () => router.push('/v1/blog') },
           { label: 'About', handler: () => router.push('/v1/me') },
           { label: 'Contact', handler: () => router.push('/v1/contact') },
           { label: 'Github', handler: () => (window.location.href = 'https://github.com/kei0528') },

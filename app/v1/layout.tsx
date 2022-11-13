@@ -33,7 +33,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               <>
                 <Link href="/" label="Home" />
                 <Link href="/v1/me" label="Me" />
-                <Link href="/my-blog" label="Blog" />
+                <Link href="/v1/blog" label="Blog" />
                 <Link href="/v1/contact" label="Contact" />
               </>
             </LinkWrapper>
