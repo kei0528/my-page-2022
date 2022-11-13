@@ -64,10 +64,10 @@ export const GlobalMenu = ({ className }: { className?: string }) => {
             <Link href="/" label="Home" />
           </li>
           <li>
-            <Link href="/v1/my-blog" label="Blog" />
+            <Link href="/my-blog" label="Blog" />
           </li>
           <li>
-            <Link href="/v1/about-me" label="Keisuke" />
+            <Link href="/v1/me" label="Keisuke" />
           </li>
           <li>
             <Link href="/v1/contact" label="Kontakt" />

@@ -16,7 +16,7 @@ export const CardLandscape = ({
   slug: string;
 }) => {
   return (
-    <Link href={`/v1/my-blog/${slug}`}>
+    <Link href={`/my-blog/${slug}`}>
       <article className="relative flex gap-6 rounded-lg border-3 border-lightest-grey px-5 py-1 duration-200 hover:-translate-y-1 hover:shadow-md sm:px-1">
         <div className="relative hidden w-[25%] min-w-[110px] max-w-[150px] overflow-hidden rounded-md  sm:block">
           <Image className=" block h-full w-full bg-lightest-grey object-cover" src={thumbnail} fill alt="" />
