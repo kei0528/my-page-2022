@@ -1,17 +1,17 @@
 'use client';
-
+import s from './Home.module.scss';
 import Image from 'next/image';
-import { useEffect } from 'react';
 import { useRef } from 'react';
 import { useSelector } from 'react-redux';
+import Particles from 'react-particles';
 import { AppState } from '../../../store';
 import { SettingType } from '../../../store/reducers/setting.reducer';
 import { FirstLoadView } from '../../triggers/FirstLoadView';
 import { GamePlayOptions } from '../../triggers/GamePlayOptions';
 import { GameLifeGauge } from '../../uis/GameLifeGauge';
 import { GameMessageBox } from '../../uis/GameMessageBox';
-import s from './Home.module.scss';
 import { useCompState } from './Home.state';
+import { particles } from './particles';
 
 const Home = () => {
   const mainRef = useRef<HTMLElement>(null);
@@ -20,7 +20,7 @@ const Home = () => {
   const lifeGaugeRef = useRef<HTMLDivElement>(null);
   const gbRef = useRef<HTMLDivElement>(null);
   const { userSetted } = useSelector<AppState>((state) => state.setting) as SettingType;
-  const { plot, currPlot, lifeGauge } = useCompState({
+  const { plot, currPlot, lifeGauge, particlesInit } = useCompState({
     messageRef,
     mainRef,
     gbRef,
@@ -34,9 +34,11 @@ const Home = () => {
     return (
       <>
         <main
+          id="particle-bg"
           ref={mainRef}
           className="flex items-center justify-center bg-black portrait:h-[calc(100vh-60px)] landscape:h-screen"
         >
+          <Particles id="particles-bg" init={particlesInit} options={particles} />
           <div
             className={`${s.gb} mx-5 h-[80vh] max-h-[480px] w-full max-w-3xl overflow-hidden rounded-md`}
             ref={gbRef}

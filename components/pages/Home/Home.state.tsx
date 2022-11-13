@@ -1,6 +1,9 @@
 import { useRouter } from 'next/navigation';
-import { RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { RefObject, useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import VanillaTilt from 'vanilla-tilt';
+import { loadFull } from 'tsparticles';
+import { Engine } from 'tsparticles-engine';
 import { useSound } from '../../../hooks/useSound';
 import { ssKeys } from '../../../statics/sessionStorageKeys';
 import { AppState } from '../../../store';
@@ -154,6 +157,23 @@ export const useCompState = ({
     setCurrPlot((state) => state + 1);
   };
 
+  // Add Tillt effect
+  useEffect(() => {
+    if (!gbRef.current) return;
+    VanillaTilt.init(gbRef.current, {
+      max: 5,
+      scale: 1.05,
+      reverse: true,
+      transition: true,
+      speed: 500,
+      perspective: 900,
+    });
+  });
+
+  const particlesInit = useCallback(async (engine: Engine) => {
+    await loadFull(engine);
+  }, []);
+
   // Set localstorage data to Redux at first render
   useEffect(() => {
     const localStorageData: SettingType = {
@@ -171,16 +191,14 @@ export const useCompState = ({
       playGameBgm();
     } else {
       stopGameBgm();
-      setTimeout(() => {
-        playGameOverBgm();
-      }, 1000);
+      playGameOverBgm();
     }
 
     return () => {
       stopGameBgm();
-      stopGameBgm();
+      stopGameOverBgm();
     };
-  }, [playGameBgm, stopGameBgm, lifeGauge, playGameOverBgm]);
+  }, [playGameBgm, stopGameBgm, lifeGauge, playGameOverBgm, stopGameOverBgm]);
 
   // Check if all strings of message rendered.
   const checkMessageRendered = useCallback(() => {
@@ -253,5 +271,5 @@ export const useCompState = ({
     };
   }, [onScreenClick, mainRef]);
 
-  return { currPlot, plot, lifeGauge };
+  return { currPlot, plot, lifeGauge, particlesInit };
 };

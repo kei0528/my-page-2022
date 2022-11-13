@@ -1,15 +1,18 @@
 'use client';
 
-import { MouseEvent, MouseEventHandler } from 'react';
+import { useRef } from 'react';
 import { v4 as uuid } from 'uuid';
 import { PlotType } from '../../pages/Home/Home.state';
 import { GameMessage } from '../../uis/GameMessage';
+import { useCompState } from './GamePlayOptions.state';
 
 export type GamePlayOptionsProp = PlotType & { className?: string };
 
 export const GamePlayOptions = ({ options, message, className }: GamePlayOptionsProp) => {
   if (!options) throw Error('Options are required');
   if (options.length > 4) throw Error('"options" param\'s length must be less than 4');
+  const menuRef = useRef<HTMLUListElement>(null);
+  useCompState({ menuRef });
   return (
     <div className={`flex bg-dark-purple ${className ?? ''}`}>
       {/* Message */}
@@ -20,7 +23,7 @@ export const GamePlayOptions = ({ options, message, className }: GamePlayOptions
       </div>
       {/* Options */}
       <nav className="flex-1 rounded-md bg-black p-2">
-        <ul className="grid h-full grid-cols-2 rounded-md border-8 border-dark-purple bg-white">
+        <ul className="grid h-full grid-cols-2 rounded-md border-8 border-dark-purple bg-white" ref={menuRef}>
           {options.map((option, index) => (
             <li className="pl-4 pr-2 pt-2 pb-4" key={uuid()}>
               <button

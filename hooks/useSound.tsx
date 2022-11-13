@@ -84,7 +84,8 @@ export const useSound = () => {
   const playGameOverBgm = useCallback(() => {
     if (soundsOn) {
       if (typeof gameOverBgm.current !== 'undefined') {
-        gameOverBgm.current.volume = 0.5;
+        gameOverBgm.current.volume = 0.3;
+        gameOverBgm.current.loop = true;
         gameOverBgm.current.play();
         return gameOverBgm;
       }
