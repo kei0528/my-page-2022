@@ -25,7 +25,6 @@ const Contact = () => {
             className={`relative z-20 flex flex-col rounded-xl bg-white p-5 shadow-xl sm:mb-20 sm:p-8 ${s.shadow}`}
             onSubmit={handleSubmit(async ({ subject, userMail, userMessage }) => {
               const result = await sendMail({ subject, message: userMessage, userMail });
-              console.log(result);
             })}
           >
             <div className={s.wrapper}>

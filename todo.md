@@ -5,7 +5,6 @@
 ### Page
 
 - [ ] Create Game page
-- [ ] Create Blog content page
 
 ### Uis
 
@@ -18,18 +17,22 @@
 
 - [ ] Fix 100vh on mobile
 - [ ] first load page align center on larger screen (add max-w-page?)
-- [ ] Fix Error: Hydration failed because the initial UI does not match what was rendered on the server. Probably session storage causes the error.
 - [ ] Remove grey pixel next to portrait
+- [ ] In game page, music disconnects on click. Performance issue?
+- [ ] In game page, read complete on click does not work correctly
+- [ ] Add sound on hover & on click to option menu
+- [ ] Gameover music is too loud
+- [ ] Repeat gameover music, add effect cleanup
 
 ## Features
 
-- [ ] Add onNextClick props to GameMessageBox component
+- [ ] Write about me
+- [ ] Animate profile image in about me page
 - [ ] Use @next/font/local to import fonts
-- [ ] Add Sound
-- [ ] Add Animation to Game Play
 - [ ] Let's animate header title
-- [ ] Add Backend feature for contact form
-- [ ] Add backend feature for blog posts
+- [ ] Add Search / Sort function to blog page
+- [ ] SEO
+- [ ] i18n
 
 ## DONE
 
@@ -46,3 +49,9 @@
 - [x] Create layout.tsx for sub pages
 - [x] Create contact page
 - [x] Game page onclick to next plot behavior. Accept only click on gamescreen.
+- [x] Create Blog content page
+- [x] Add Sound
+- [x] Add Animation to Game Play
+- [x] Add backend feature for blog posts
+- [x] Add Backend feature for contact form
+- [x] Fix Error: Hydration failed because the initial UI does not match what was rendered on the server. Probably session storage causes the error.
