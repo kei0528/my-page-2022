@@ -16,5 +16,7 @@ export const sendMail = async (body: SendMailType) => {
     method: 'POST',
     body: JSON.stringify(body),
   });
-  return res;
+  const data = await res.json();
+
+  return data;
 };
