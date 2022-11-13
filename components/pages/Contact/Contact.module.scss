@@ -1,5 +1,13 @@
+.wrapper {
+  @apply mb-4 block;
+}
+
 .input {
-  @apply mb-4 block rounded-md border-3 border-lightest-grey py-1 px-2 text-base focus-visible:outline-gb-purple sm:text-lg;
+  @apply block w-full rounded-md border-3 border-lightest-grey py-1 px-2 text-base focus-visible:outline-gb-purple sm:text-lg;
+}
+
+.error {
+  @apply mt-1 block w-fit rounded-md bg-red px-3 py-1 text-xs text-white;
 }
 
 .shadow {
