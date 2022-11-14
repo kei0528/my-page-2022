@@ -1,3 +1,6 @@
+export const isDarkmode =
+  typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
 export const fetchStatus = {
   success: 'SUCCESS',
   error: 'ERROR',
