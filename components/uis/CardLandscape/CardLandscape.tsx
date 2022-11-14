@@ -28,13 +28,16 @@ export const CardLandscape = ({
               <Image src="/assets/icons/Icon_Tag.svg" alt="Category" width={14} height={14} />
               <ul className="flex flex-wrap gap-3">
                 {categories.map((category) => (
-                  <li key={uuid()} className="rounded bg-lightest-grey py-1 px-2 text-center text-xs">
+                  <li
+                    key={uuid()}
+                    className="rounded bg-lightest-grey py-1 px-2 text-center text-xs dark:bg-dark-purple dark:text-lighter-grey"
+                  >
                     {category}
                   </li>
                 ))}
               </ul>
             </div>
-            <time className="flex gap-2 text-xs">
+            <time className="flex gap-2 text-xs dark:text-lighter-grey">
               <Image src="/assets/icons/Icon_Clock.svg" width={16} height={16} alt="Posted on" />
               {date.toLocaleString()}
             </time>

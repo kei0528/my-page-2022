@@ -7,7 +7,7 @@
 }
 
 .nav {
-  @apply relative block font-game text-game-md leading-5;
+  @apply relative block font-game text-game-md leading-5 text-black;
 
   &:focus-visible {
     @apply outline-none;

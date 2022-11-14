@@ -13,7 +13,7 @@ const LinkWrapper = ({ children }: { children: ReactElement }) => {
 const Link = ({ href, label }: { href: string; label: string }) => {
   return (
     <li>
-      <NextLink className="text-black hover:underline md:text-lg" href={href}>
+      <NextLink className="text-black hover:underline dark:text-white md:text-lg" href={href}>
         {label}
       </NextLink>
     </li>
@@ -25,7 +25,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <>
-      {children}
+      <div className="min-h-[calc(100vh-165px-240px)] md:min-h-[calc(100vh-165px-120px)]">{children}</div>
       <footer className="mx-5 sm:mx-8">
         <div className="mx-auto flex max-w-page justify-between border-t border-lighter-grey px-2 pt-8 sm:p-8 sm:pt-12">
           <div className="flex flex-col gap-14 md:gap-7">
@@ -39,11 +39,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             </LinkWrapper>
             <LinkWrapper>
               <>
-                <a className="block text-black hover:underline md:text-lg" href="https://github.com/kei0528">
+                <a
+                  className="block text-black hover:underline dark:text-white md:text-lg"
+                  href="https://github.com/kei0528"
+                >
                   Github
                 </a>
                 <a
-                  className="block text-black hover:underline md:text-lg"
+                  className="block text-black hover:underline dark:text-white md:text-lg"
                   href="https://www.linkedin.com/in/keisuke-tanaka-5546a2198/"
                 >
                   Linkedin

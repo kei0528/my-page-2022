@@ -7,12 +7,12 @@ import { Provider } from '../components/triggers/Provider';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html data-lt-installed={true}>
+    <html data-lt-installed={true} className="dark">
       <head>
-        <title>&lt; DevKei lv=5 /&gt;</title>
-        <meta key='viewport' name='viewport' content='initial-scale=1.0, width=device-width' />
+        <title>Dev Kei lv.5</title>
+        <meta key="viewport" name="viewport" content="initial-scale=1.0, width=device-width" />
       </head>
-      <body className='min-h-screen portrait:pb-[60px] landscape:pr-[60px]'>
+      <body className="min-h-screen portrait:pb-[60px] landscape:pr-[60px]">
         <Provider>
           <SideNav />
           <GlobalMenu />

@@ -22,3 +22,7 @@
 * {
   @apply font-body;
 }
+
+html:where(.dark) {
+  @apply bg-black text-white;
+}

@@ -15,7 +15,7 @@ export const GameLifeGauge = React.forwardRef<Ref, GameLifeGauge>(({ lifeMax, li
   return (
     <div className={`relative rounded-bl rounded-tr rounded-tl-3xl bg-army-green p-2 ${className ?? ''}`} ref={ref}>
       <div className="rounded-tl-3xl border-4 border-dark-green bg-light-beige p-4">
-        <h1 className="flex justify-between">
+        <h1 className="flex justify-between text-black">
           <span className="text-shadow-game font-game text-game-md leading-game-md">Dev. Keisuke</span>
           <span className="text-shadow-game font-game text-game-md leading-game-md">Lv: 5</span>
         </h1>

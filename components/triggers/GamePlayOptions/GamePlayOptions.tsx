@@ -30,7 +30,7 @@ export const GamePlayOptions = ({ options, message, className }: GamePlayOptions
                 className='relative max-h-10 max-w-full hover:after:absolute hover:after:-left-4 hover:after:top-2 hover:after:h-3 hover:after:w-3 hover:after:animate-bounce hover:after:bg-triangle-right hover:after:bg-contain hover:after:bg-center hover:after:bg-no-repeat hover:after:content-[""]'
                 onClick={() => option.handler()}
               >
-                <span className="max-h-10 max-w-full break-all text-left font-game text-3xl leading-5 line-clamp-2 md:text-game-md">
+                <span className="max-h-10 max-w-full break-all text-left font-game text-3xl leading-5 text-black line-clamp-2 md:text-game-md">
                   {option.label}
                 </span>
               </button>

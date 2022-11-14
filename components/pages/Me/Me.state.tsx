@@ -1,7 +1,9 @@
 import VanillaTilt from 'vanilla-tilt';
-import { RefObject, useEffect } from 'react';
+import { RefObject, useEffect, useState } from 'react';
 
 export const useCompState = ({ profileImgRef }: { profileImgRef: RefObject<HTMLDivElement> }) => {
+  const [clicked, setClicked] = useState(false);
+
   useEffect(() => {
     if (!profileImgRef.current) return;
     VanillaTilt.init(profileImgRef.current, {
@@ -16,5 +18,5 @@ export const useCompState = ({ profileImgRef }: { profileImgRef: RefObject<HTMLD
     });
   }, [profileImgRef]);
 
-  return {};
+  return { clicked, setClicked };
 };

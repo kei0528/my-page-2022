@@ -6,6 +6,12 @@
   @apply block w-full rounded-md border-3 border-lightest-grey py-1 px-2 text-base focus-visible:outline-gb-purple sm:text-lg;
 }
 
+:global(.dark) {
+  .input {
+    @apply border-2 bg-darker-grey;
+  }
+}
+
 .error {
   @apply mt-1 block w-fit rounded-md bg-red px-3 py-1 text-xs text-white;
 }
