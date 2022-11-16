@@ -28,11 +28,14 @@ export const setting = createSlice({
       sessionStorageServices.set(ssKeys.gbColor, payload);
       state.gbColor = payload;
     },
-    toggleSoundOption(state, { payload }: PayloadAction<boolean>) {
+    setSoundOption(state, { payload }: PayloadAction<boolean>) {
       sessionStorageServices.set(ssKeys.soundsOn, payload);
       state.soundsOn = payload;
     },
-    toggleUserSetted(state, { payload }: PayloadAction<boolean>) {
+    toggleSoundOption(state) {
+      state.soundsOn = !state.soundsOn;
+    },
+    setUserSetted(state, { payload }: PayloadAction<boolean>) {
       sessionStorageServices.set(ssKeys.userSetted, payload);
       state.userSetted = payload;
     },
@@ -42,6 +45,7 @@ export const setting = createSlice({
   },
 });
 
-export const { changeLang, changeGbColor, toggleSoundOption, toggleUserSetted, setSettings } = setting.actions;
+export const { changeLang, changeGbColor, setSoundOption, setUserSetted, setSettings, toggleSoundOption } =
+  setting.actions;
 
 export default setting.reducer;

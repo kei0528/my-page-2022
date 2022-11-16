@@ -8,8 +8,6 @@
 
 ### Triggers
 
-- [ ] Create sound off button
-
 ## Fixes
 
 - [ ] In game page, read complete on click does not work correctly
@@ -59,3 +57,4 @@
 - [x] SEO
 - [x] Update Introduction at home page
 - [x] nav to about me page from first game option
+- [x] Create sound off button

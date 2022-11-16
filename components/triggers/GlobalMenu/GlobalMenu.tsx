@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleGlobalMenuIsShown } from '../../../store/reducers/ui.reducer';
 import { AppState } from '../../../store';
 import { MouseEventHandler } from 'react';
-import { SettingType } from '../../../store/reducers/setting.reducer';
+import { SettingType, setSoundOption, toggleSoundOption } from '../../../store/reducers/setting.reducer';
 import { useSound } from '../../../hooks/useSound';
 
 const Link = ({ href, label }: { href: string; label: string }) => {
@@ -50,6 +50,7 @@ const Button = ({ onClick, label }: { onClick?: MouseEventHandler; label: string
 export const GlobalMenu = ({ className }: { className?: string }) => {
   const { playMenuToggleSound } = useSound();
   const isShown = useSelector<AppState>((state) => state.ui.globalMenu.isShown);
+  const soundIsOn = useSelector<AppState>((state) => state.setting.soundsOn);
   const dispatch = useDispatch();
 
   return (
@@ -70,10 +71,13 @@ export const GlobalMenu = ({ className }: { className?: string }) => {
             <Link href="/v1/me" label="Keisuke" />
           </li>
           <li>
-            <Link href="/v1/contact" label="Kontakt" />
+            <Link href="/v1/contact" label="Contact" />
           </li>
           <li>
-            <Button label="Schliessen" />
+            <Button label={soundIsOn ? 'Sound off' : 'Sound on'} onClick={() => dispatch(toggleSoundOption())} />
+          </li>
+          <li>
+            <Button label="Close" />
           </li>
         </ul>
       </nav>

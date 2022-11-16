@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { toggleSoundOption, toggleUserSetted } from '../../../store/reducers/setting.reducer';
+import { setSoundOption, setUserSetted } from '../../../store/reducers/setting.reducer';
 import s from './FirstLoadView.module.scss';
 import { GameMessage } from '../../uis/GameMessage';
 
@@ -10,8 +10,8 @@ const Btn = ({ label, option }: { label: string; option: boolean }) => {
     <button
       className={`${s.btn} font-game text-game-md leading-game-md text-white`}
       onClick={() => {
-        dispatch(toggleSoundOption(option));
-        dispatch(toggleUserSetted(true));
+        dispatch(setSoundOption(option));
+        dispatch(setUserSetted(true));
       }}
     >
       {label}
