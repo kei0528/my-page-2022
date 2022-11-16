@@ -10,9 +10,10 @@ export const SideNav = () => {
   const dispatch = useDispatch();
 
   return (
-    <nav className="fixed bottom-0 z-50 flex w-screen justify-between bg-gb-purple px-2 py-3 landscape:right-0 landscape:h-realMaxVh landscape:w-fit landscape:flex-col-reverse landscape:py-5 landscape:pl-4">
+    <nav className="fixed bottom-0 z-50 flex w-screen justify-between bg-gb-purple px-2 py-3 landscape:right-0 landscape:h-realMaxVh landscape:w-fit landscape:flex-col-reverse landscape:py-5 ">
       <div className="flex gap-4 landscape:flex-col">
-        <a className={s.btn} href="https://github.com/kei0528" target="_blank" rel="noreferrer">
+        <a className={s.btn_wrapper} href="https://github.com/kei0528" target="_blank" rel="noreferrer">
+          <div className={s.btn}></div>
           <Image
             className="landscape:rotate-90 "
             alt="Github"
@@ -22,7 +23,8 @@ export const SideNav = () => {
             height={20}
           />
         </a>
-        <button className={s.btn} onClick={() => document.querySelector('html')?.classList.toggle('dark')}>
+        <button className={s.btn_wrapper} onClick={() => document.querySelector('html')?.classList.toggle('dark')}>
+          <div className={s.btn}></div>
           <Image src="/assets/icons/Icon_Moon.svg" alt="Toggle darkmode" width={20} height={20} />
         </button>
       </div>
