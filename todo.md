@@ -14,12 +14,10 @@
 
 - [ ] first load page align center on larger screen (add max-w-page?)
 - [ ] In game page, read complete on click does not work correctly
-- [ ] Menu button cursor pointer
 - [ ] Session storage does not work correct
 
 ## Features
 
-- [ ] Remove setting component
 - [ ] Write about me
 - [ ] Use @next/font/local to import fonts
 - [ ] Let's animate header title
@@ -27,6 +25,7 @@
 - [ ] SEO
 - [ ] i18n
 - [ ] nav to about me page from first game option
+- [ ] Update Introduction at home page
 
 ## DONE
 
@@ -58,3 +57,5 @@
 - [x] Finish contact page
 - [x] Remove grey pixel next to portrait
 - [x] Fix 100vh on mobile
+- [x] Menu button cursor pointer
+- [x] Remove setting component

@@ -24,20 +24,22 @@ export const FirstLoadView = React.memo(() => {
 
   return (
     <main className="bg-black p-5 sm:p-8 portrait:h-realMaxVhWithMenu landscape:h-realMaxVh">
-      <p>
-        <GameMessage message={message.current} />
-      </p>
-      <ul
-        style={{ animationDelay: `${message.current.length / 15 + 1}s` }}
-        className="message-anime mt-10 flex w-fit flex-col gap-4 border border-b-4 border-r-4 border-white py-8 px-12"
-      >
-        <li>
-          <Btn label="Yes" option={true} />
-        </li>
-        <li>
-          <Btn label="No" option={false} />
-        </li>
-      </ul>
+      <div className="mx-auto mt-[10vh] max-w-page">
+        <p>
+          <GameMessage message={message.current} />
+        </p>
+        <ul
+          style={{ animationDelay: `${message.current.length / 15 + 1}s` }}
+          className="message-anime mt-10 flex w-fit flex-col gap-4 border border-b-4 border-r-4 border-white py-8 px-12"
+        >
+          <li>
+            <Btn label="Yes" option={true} />
+          </li>
+          <li>
+            <Btn label="No" option={false} />
+          </li>
+        </ul>
+      </div>
     </main>
   );
 });
