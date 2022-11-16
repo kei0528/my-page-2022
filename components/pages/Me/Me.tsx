@@ -33,7 +33,7 @@ const Me = () => {
 
         <div className="my-12 text-center text-base sm:text-lg">
           <h2>Hej! I´m Keisuke!</h2>
-          <p></p>
+          <p className="text-test">TEST</p>
         </div>
       </BaseMainLayout>
     </>

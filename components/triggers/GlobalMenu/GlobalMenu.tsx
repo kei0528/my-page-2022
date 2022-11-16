@@ -73,9 +73,6 @@ export const GlobalMenu = ({ className }: { className?: string }) => {
             <Link href="/v1/contact" label="Kontakt" />
           </li>
           <li>
-            <Button label="Einstellung" />
-          </li>
-          <li>
             <Button label="Schliessen" />
           </li>
         </ul>

@@ -14,7 +14,6 @@
 
 - [ ] Fix 100vh on mobile
 - [ ] first load page align center on larger screen (add max-w-page?)
-- [ ] Remove grey pixel next to portrait
 - [ ] In game page, read complete on click does not work correctly
 - [ ] Menu button cursor pointer
 - [ ] Session storage does not work correct
@@ -57,3 +56,4 @@
 - [x] Animate profile image in about me page
 - [x] Repeat gameover music, add effect cleanup
 - [x] Finish contact page
+- [x] Remove grey pixel next to portrait

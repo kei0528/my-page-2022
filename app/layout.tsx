@@ -13,6 +13,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       document.querySelector('html')!.classList.add('dark');
     }
+
+    const changeVhCssVar = () => {
+      document.documentElement.style.setProperty('--real-max-vh', window.innerHeight + 'px');
+      document.documentElement.style.setProperty('--real-max-vh-with-menu', window.innerHeight - 60 + 'px');
+    };
+    changeVhCssVar();
+    window.addEventListener('resize', () => {
+      changeVhCssVar();
+    });
+
+    return () => {
+      window.removeEventListener('resize', changeVhCssVar);
+    };
   }, []);
   return (
     <html data-lt-installed={true} className={isDarkmode ? 'dark' : ''}>
