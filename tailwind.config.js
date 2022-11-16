@@ -36,6 +36,10 @@ module.exports = {
         realMaxVh: 'var(--real-max-vh)',
         realMaxVhWithMenu: 'var(--real-max-vh-with-menu)',
       },
+      minHeight: {
+        realMaxVh: 'var(--real-max-vh)',
+        realMaxVhWithMenu: 'var(--real-max-vh-with-menu)',
+      },
       backgroundImage: {
         'triangle-right': 'url(/assets/icons/Icon_Triangle-right.svg)',
       },

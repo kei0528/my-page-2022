@@ -33,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <title>Dev Kei lv.5</title>
         <meta key="viewport" name="viewport" content="initial-scale=1.0, width=device-width" />
       </head>
-      <body className="min-h-screen portrait:pb-[60px] landscape:pr-[60px]">
+      <body className="portrait:h-realMaxVhWithMenu portrait:pb-[60px] landscape:min-h-screen landscape:pr-[60px]">
         <Provider>
           <SideNav />
           <GlobalMenu />
