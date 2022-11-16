@@ -12,7 +12,6 @@
 
 ## Fixes
 
-- [ ] Fix 100vh on mobile
 - [ ] first load page align center on larger screen (add max-w-page?)
 - [ ] In game page, read complete on click does not work correctly
 - [ ] Menu button cursor pointer
@@ -27,6 +26,7 @@
 - [ ] Add Search / Sort function to blog page
 - [ ] SEO
 - [ ] i18n
+- [ ] nav to about me page from first game option
 
 ## DONE
 
@@ -57,3 +57,4 @@
 - [x] Repeat gameover music, add effect cleanup
 - [x] Finish contact page
 - [x] Remove grey pixel next to portrait
+- [x] Fix 100vh on mobile
