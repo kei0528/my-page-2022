@@ -1,11 +1,12 @@
 import VanillaTilt from 'vanilla-tilt';
 import { RefObject, useEffect, useState } from 'react';
+import { isTouchDevice } from '../../../utils/environmentServices';
 
 export const useCompState = ({ profileImgRef }: { profileImgRef: RefObject<HTMLDivElement> }) => {
   const [clicked, setClicked] = useState(false);
 
   useEffect(() => {
-    if (!profileImgRef.current) return;
+    if (!profileImgRef.current || isTouchDevice) return;
     VanillaTilt.init(profileImgRef.current, {
       max: 40,
       scale: 1.1,

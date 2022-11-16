@@ -28,7 +28,6 @@
 - [ ] Add Search / Sort function to blog page
 - [ ] SEO
 - [ ] i18n
-- [ ] Finish contact page
 
 ## DONE
 
@@ -57,3 +56,4 @@
 - [x] Add sound on hover & on click to option menu
 - [x] Animate profile image in about me page
 - [x] Repeat gameover music, add effect cleanup
+- [x] Finish contact page

@@ -9,6 +9,7 @@ import { ssKeys } from '../../../statics/sessionStorageKeys';
 import { AppState } from '../../../store';
 import { setSettings, SettingType } from '../../../store/reducers/setting.reducer';
 import { sessionStorageServices } from '../../../utils/sessionStorageServices';
+import { isTouchDevice } from '../../../utils/environmentServices';
 
 export type PlotType = {
   message: string;
@@ -159,7 +160,8 @@ export const useCompState = ({
 
   // Add Tillt effect
   useEffect(() => {
-    if (!gbRef.current) return;
+    console.log('isTouchDevice', isTouchDevice);
+    if (!gbRef.current || isTouchDevice) return;
     VanillaTilt.init(gbRef.current, {
       max: 5,
       scale: 1.05,
