@@ -28,13 +28,13 @@ export const SideNav = () => {
       </div>
       <div className="relative flex h-fit items-center gap-2 rounded-full bg-light-gb-purple px-3 py-2 leading-3 shadow-btn-inner landscape:flex-col landscape:pr-1 landscape:pl-2">
         <label
-          className="cursor-pointer font-bold text-lighter-gb-purple drop-shadow-md landscape:writing-mode-vertical"
+          className="cursor-pointer font-bold text-light-beige drop-shadow-md landscape:writing-mode-vertical"
           htmlFor="g-menu"
         >
           Menu
         </label>
         <button
-          className="-mb-1 block h-6 w-6 rounded-full bg-lighter-grey shadow-btn shadow-lighter-gb-purple landscape:shadow-btn-vertical landscape:shadow-lighter-gb-purple"
+          className="-mb-1 block h-6 w-6 rounded-full bg-lightest-grey shadow-btn shadow-lighter-gb-purple landscape:shadow-btn-vertical landscape:shadow-lighter-gb-purple"
           id="g-menu"
           aria-label="Menu"
           onClick={() => {

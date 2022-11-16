@@ -21,7 +21,6 @@
 - [ ] Use @next/font/local to import fonts
 - [ ] Let's animate header title
 - [ ] Add Search / Sort function to blog page
-- [ ] SEO
 - [ ] i18n
 - [ ] nav to about me page from first game option
 - [ ] Update Introduction at home page
@@ -59,3 +58,4 @@
 - [x] Menu button cursor pointer
 - [x] Remove setting component
 - [x] first load page align center on larger screen (add max-w-page?)
+- [x] SEO

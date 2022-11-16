@@ -99,39 +99,27 @@ export const useCompState = ({
         returnToOption: false,
       },
       {
-        message: 'I was a barista for many years. I love coffee!',
+        message: "I'm a frontend developer. I love programming!",
         options: null,
         returnToOption: false,
       },
       {
-        message: 'Now I changed my job and am a frontend developer!',
+        message: 'Before starting my career as developer, I was a barista.',
         options: null,
         returnToOption: false,
       },
       {
-        message: 'I love programming!',
+        message: 'I love coffee!',
         options: null,
         returnToOption: false,
       },
       {
-        message: 'I used TypeScript + Next.js for building this page,',
-        options: null,
+        message: 'Do you want know more about me?',
+        options: [
+          { label: 'Yes', handler: () => router.push('/v1/me') },
+          { label: 'No', handler: () => setCurrPlot(1) },
+        ],
         returnToOption: false,
-      },
-      {
-        message: 'Tailwind CSS for making this place beautiful,',
-        options: null,
-        returnToOption: false,
-      },
-      {
-        message: 'and Redux for helping me store states.',
-        options: null,
-        returnToOption: false,
-      },
-      {
-        message: 'Hope you like this place!',
-        options: null,
-        returnToOption: true,
       },
       { message: 'You used Tackle!', options: null, returnToOption: false },
       {
