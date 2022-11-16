@@ -25,10 +25,68 @@
   animation: animate-kei 100s infinite;
 }
 
+.loading_message {
+  position: relative;
+
+  span {
+    display: inline-block;
+    animation: waviy 2s infinite;
+  }
+}
+
+.loading_kei {
+  @apply -m-1 w-12;
+
+  animation: kei-waviy 2s 0.71s infinite;
+}
+
+.send_success_container {
+  @apply my-20 flex flex-col items-center;
+
+  > span:first-of-type {
+    animation-delay: 0.1s;
+  }
+  > span:nth-of-type(2) {
+    animation-delay: 0.3s;
+  }
+  > span:nth-of-type(3) {
+    animation-delay: 0.5s;
+  }
+  > span:nth-of-type(4) {
+    animation-delay: 0.7s;
+  }
+}
+
+.send_success {
+  @apply inline-block animate-bounce text-xl font-bold;
+  transform-origin: bottom;
+}
+
+@keyframes waviy {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes kei-waviy {
+  0%,
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-30px);
+  }
+}
+
 @keyframes animate-kei {
   0% {
     top: 5%;
-    left: 35%;
+    left: 25%;
   }
   4% {
     top: -10%;

@@ -4,35 +4,31 @@
 
 ### Page
 
-- [ ] Create Game page
-
 ### Uis
 
 ### Triggers
 
 - [ ] Create sound off button
-- [ ] Create setting component
 
 ## Fixes
 
 - [ ] Fix 100vh on mobile
 - [ ] first load page align center on larger screen (add max-w-page?)
 - [ ] Remove grey pixel next to portrait
-- [ ] In game page, music disconnects on click. Performance issue?
 - [ ] In game page, read complete on click does not work correctly
-- [ ] Add sound on hover & on click to option menu
-- [ ] Gameover music is too loud
-- [ ] Repeat gameover music, add effect cleanup
+- [ ] Menu button cursor pointer
+- [ ] Session storage does not work correct
 
 ## Features
 
+- [ ] Remove setting component
 - [ ] Write about me
-- [ ] Animate profile image in about me page
 - [ ] Use @next/font/local to import fonts
 - [ ] Let's animate header title
 - [ ] Add Search / Sort function to blog page
 - [ ] SEO
 - [ ] i18n
+- [ ] Finish contact page
 
 ## DONE
 
@@ -55,3 +51,9 @@
 - [x] Add backend feature for blog posts
 - [x] Add Backend feature for contact form
 - [x] Fix Error: Hydration failed because the initial UI does not match what was rendered on the server. Probably session storage causes the error.
+- [x] Create Game page
+- [x] In game page, music disconnects on click. Performance issue?
+- [x] Gameover music is too loud
+- [x] Add sound on hover & on click to option menu
+- [x] Animate profile image in about me page
+- [x] Repeat gameover music, add effect cleanup

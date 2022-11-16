@@ -19,7 +19,7 @@ const sendMail = (req: NextApiRequest, res: NextApiResponse) => {
 
   /* -- Backend Validating -- */
   // Validate mail address
-  if (!subject || (subject && !subject.length)) {
+  if (!userMail || (userMail && !userMail.length)) {
     res.status(400).json({
       message: validateMessages.mailAddressRequired,
       status: fetchStatus.error,

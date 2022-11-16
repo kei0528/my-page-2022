@@ -4,6 +4,7 @@ export const isDarkmode =
 export const fetchStatus = {
   success: 'SUCCESS',
   error: 'ERROR',
+  loading: 'LOADING',
 };
 
 export const fetchMessages = {

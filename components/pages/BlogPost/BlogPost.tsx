@@ -18,7 +18,6 @@ const Arrow = () => {
 };
 
 async function getPost({ slug }: { slug: string }) {
-  console.log('does it work?', urls.baseUrl + 'api/blog/' + slug);
   const data = await fetch(urls.baseUrl + 'api/blog/' + slug);
   const res = await data.json();
   return res;
