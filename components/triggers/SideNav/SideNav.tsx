@@ -10,7 +10,7 @@ export const SideNav = () => {
   const dispatch = useDispatch();
 
   return (
-    <nav className="fixed bottom-0 z-50 flex w-screen justify-between bg-gb-purple px-2 py-3 landscape:right-0 landscape:h-screen landscape:w-fit landscape:flex-col-reverse landscape:py-5 landscape:pl-4">
+    <nav className="fixed bottom-0 z-50 flex w-screen justify-between bg-gb-purple px-2 py-3 landscape:right-0 landscape:h-realMaxVh landscape:w-fit landscape:flex-col-reverse landscape:py-5 landscape:pl-4">
       <div className="flex gap-4 landscape:flex-col">
         <a className={s.btn} href="https://github.com/kei0528" target="_blank" rel="noreferrer">
           <Image
