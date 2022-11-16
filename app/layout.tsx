@@ -31,9 +31,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" data-lt-installed={true} className={isDarkmode ? 'dark' : ''}>
       <head>
         <title>Dev Kei lv.5</title>
+        <meta name="google-site-verification" content="dOI1C2WPtilhWa2VBOF56iWjgCUreqccSKI2ORdRZz8" />
         <meta key="viewport" name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="Who's Keisuke? Check out the page and contact him!" />
-        <meta name="keyword" content="Frontend Developer,Web Developer,Developer,Web Application, Website" />
+        <meta name="keyword" content="Frontend Developer,Web Developer,Developer,Web Application,Keisuke Tanaka" />
         <meta property="og:title" content="Dev Kei lv.5" />
         <meta property="og:description" content="Who's Keisuke? Check out the page and contact him!" />
         <meta property="og:type" content="website" />
