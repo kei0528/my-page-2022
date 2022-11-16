@@ -22,8 +22,6 @@
 - [ ] Let's animate header title
 - [ ] Add Search / Sort function to blog page
 - [ ] i18n
-- [ ] nav to about me page from first game option
-- [ ] Update Introduction at home page
 
 ## DONE
 
@@ -59,3 +57,5 @@
 - [x] Remove setting component
 - [x] first load page align center on larger screen (add max-w-page?)
 - [x] SEO
+- [x] Update Introduction at home page
+- [x] nav to about me page from first game option

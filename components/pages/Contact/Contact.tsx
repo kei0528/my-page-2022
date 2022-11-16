@@ -9,15 +9,10 @@ import { sendMail } from '../../../utils/fetchServices';
 import { regex } from '../../../statics/regexCollection';
 import { fetchStatus, validateMessages } from '../../../statics/conditions';
 import { useCompState } from './Contact.state';
-import { useEffect } from 'react';
 import { v4 as uuid } from 'uuid';
 
 const Contact = () => {
   const { errors, register, handleSubmit, setSendStatus, sendStatus } = useCompState();
-
-  useEffect(() => {
-    console.log(sendStatus);
-  });
 
   return (
     <>
@@ -65,7 +60,7 @@ const Contact = () => {
             <span className={`text-turkey ${s.send_success}`}>THANKS</span>
             <span className={`text-life-green ${s.send_success}`}>DANKE</span>
             <span className={`text-light-text-purple ${s.send_success}`}>TACK</span>
-            <span className={`text-red ${s.send_success}`}>ありがどう</span>
+            <span className={`text-red ${s.send_success}`}>ありがとう</span>
           </div>
         ) : (
           <div className="relative mx-auto -mt-24  mb-12 max-w-xl ">

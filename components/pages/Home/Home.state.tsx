@@ -148,7 +148,6 @@ export const useCompState = ({
 
   // Add Tillt effect
   useEffect(() => {
-    console.log('isTouchDevice', isTouchDevice);
     if (!gbRef.current || isTouchDevice) return;
     VanillaTilt.init(gbRef.current, {
       max: 5,
