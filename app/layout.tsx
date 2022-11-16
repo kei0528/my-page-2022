@@ -28,10 +28,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     };
   }, []);
   return (
-    <html data-lt-installed={true} className={isDarkmode ? 'dark' : ''}>
+    <html lang="en" data-lt-installed={true} className={isDarkmode ? 'dark' : ''}>
       <head>
         <title>Dev Kei lv.5</title>
         <meta key="viewport" name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="Who's Keisuke? Check out the page and contact him!" />
+        <meta name="keyword" content="Frontend Developer,Web Developer,Developer,Web Application, Website" />
+        <meta property="og:title" content="Dev Kei lv.5" />
+        <meta property="og:description" content="Who's Keisuke? Check out the page and contact him!" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/public/assets/images/Image_Keisuke-game.webp" />
+        <meta property="og:site_name" content="Dev Kei lv.5" />
+        <meta property="og:locale" content="en" />
       </head>
       <body className="portrait:h-realMaxVhWithMenu portrait:pb-[60px] landscape:min-h-realMaxVh landscape:pr-[60px]">
         <Provider>

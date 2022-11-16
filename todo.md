@@ -12,7 +12,6 @@
 
 ## Fixes
 
-- [ ] first load page align center on larger screen (add max-w-page?)
 - [ ] In game page, read complete on click does not work correctly
 - [ ] Session storage does not work correct
 
@@ -59,3 +58,4 @@
 - [x] Fix 100vh on mobile
 - [x] Menu button cursor pointer
 - [x] Remove setting component
+- [x] first load page align center on larger screen (add max-w-page?)
