@@ -1,18 +1,26 @@
 import s from './SearchBar.module.scss';
 import Image from 'next/image';
-import { ChangeEventHandler } from 'react';
+import { ChangeEventHandler, FormEventHandler } from 'react';
 
 export const SearchBar = ({
   onChange,
   className,
   placeholder,
+  onSubmit,
 }: {
-  onChange?: ChangeEventHandler;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
   className?: string;
   placeholder?: string;
+  onSubmit?: FormEventHandler<HTMLFormElement>;
 }) => {
   return (
-    <div className={`relative ${className ?? ''}`}>
+    <form
+      className={`relative ${className ?? ''}`}
+      onSubmit={(e) => {
+        e.preventDefault();
+        onSubmit && onSubmit(e);
+      }}
+    >
       <input
         placeholder={placeholder ?? ''}
         className={`${s.input} relative w-full rounded-full border-3 border-lightest-grey py-2 pl-14 pr-4 text-black !outline-none duration-200 focus-visible:-translate-y-1 focus-visible:shadow-md dark:border-lightest-grey dark:bg-black dark:text-white md:text-lg`}
@@ -25,6 +33,6 @@ export const SearchBar = ({
         height={32}
         alt="Search"
       />
-    </div>
+    </form>
   );
 };

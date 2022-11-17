@@ -94,7 +94,7 @@ export const useCompState = ({
         ],
       },
       {
-        message: "Hej! I'm Keisuke from Japan!",
+        message: "Hej! I'm Keisuke!",
         options: null,
         returnToOption: false,
       },

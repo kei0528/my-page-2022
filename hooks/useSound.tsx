@@ -36,6 +36,7 @@ export const useSound = () => {
         return gameBgm;
       }
     }
+    return () => gameBgm.current?.pause();
   }, [soundsOn, gameBgm]);
 
   const stopGameBgm = () => {
@@ -48,6 +49,7 @@ export const useSound = () => {
       clickSound.current?.play();
       return clickSound;
     }
+    return () => clickSound.current?.pause();
   }, [soundsOn, clickSound]);
 
   const playHoverSound = useCallback(() => {
@@ -55,6 +57,7 @@ export const useSound = () => {
       hoverSound.current?.play();
       return hoverSound;
     }
+    return () => hoverSound.current?.pause();
   }, [soundsOn, hoverSound]);
 
   const playMenuToggleSound = useCallback(() => {
@@ -62,6 +65,7 @@ export const useSound = () => {
       menuToggleSound.current?.play();
       return menuToggleSound;
     }
+    return () => menuToggleSound.current?.pause();
   }, [soundsOn, menuToggleSound]);
 
   const playFaintedSound = useCallback(() => {
@@ -69,6 +73,7 @@ export const useSound = () => {
       faintedSound.current?.play();
       return faintedSound;
     }
+    return () => faintedSound.current?.pause();
   }, [soundsOn, faintedSound]);
 
   const playAttackSound = useCallback(() => {
@@ -79,6 +84,7 @@ export const useSound = () => {
         return attackSound;
       }
     }
+    return () => attackSound.current?.pause();
   }, [soundsOn, attackSound]);
 
   const playGameOverBgm = useCallback(() => {
@@ -90,6 +96,7 @@ export const useSound = () => {
         return gameOverBgm;
       }
     }
+    return () => gameOverBgm.current?.pause();
   }, [gameOverBgm, soundsOn]);
 
   const stopGameOverBgm = () => {
