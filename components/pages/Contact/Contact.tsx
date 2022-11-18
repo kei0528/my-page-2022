@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 import { BaseMainLayout } from '../../uis/BaseMainLayout';
 import { Header } from '../../uis/Header';
-import { sendMail } from '../../../utils/fetchServices';
+import { sendMail } from '../../../utils/mailServices';
 import { regex } from '../../../statics/regexCollection';
 import { fetchStatus, validateMessages } from '../../../statics/conditions';
 import { useCompState } from './Contact.state';

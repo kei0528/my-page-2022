@@ -29,26 +29,53 @@ const TagIcon = () => {
 };
 
 export const CardLandscape = ({
+  content,
   title,
   categories,
   date,
   thumbnail,
   slug,
+  isEyeCatcher = false,
 }: {
+  content: string;
   title: string;
   categories: string[];
   date: Date | string;
   thumbnail: string;
   slug: string;
+  isEyeCatcher?: boolean;
 }) => {
   return (
     <Link href={`/v1/blog/${slug}`}>
-      <article className="relative flex gap-6 rounded-lg border-3 border-lightest-grey px-5 py-1 duration-200 hover:-translate-y-1 hover:shadow-md dark:border-2 sm:px-1">
-        <div className="relative hidden w-[25%] min-w-[110px] max-w-[150px] overflow-hidden rounded-md  sm:block">
-          <Image className=" block h-full w-full bg-lightest-grey object-cover" src={thumbnail} fill alt="" />
+      <article
+        className={`relative flex gap-6 rounded-lg border-3 border-lightest-grey bg-white  px-5 py-1 duration-200 hover:-translate-y-1 hover:shadow-md dark:border-2 dark:bg-black sm:pl-1 ${
+          isEyeCatcher
+            ? 'flex-col gap-0 px-0 dark:border-light-text-purple sm:flex-row sm:gap-6 sm:px-5'
+            : 'border-darker-grey'
+        }`}
+      >
+        <div
+          className={`relative hidden overflow-hidden rounded-md  sm:block ${
+            isEyeCatcher
+              ? '!block min-h-[30vw] w-[35%]  min-w-[100%] max-w-[280px] sm:min-h-[auto] sm:min-w-[240px]'
+              : 'w-[25%]  min-w-[110px]  max-w-[150px]'
+          }`}
+        >
+          <Image className="block h-full w-full bg-lightest-grey object-cover" src={thumbnail} fill alt="" />
         </div>
-        <div className="h-fit py-3">
-          <h2 className="relative truncate text-base font-bold md:text-xl">{title}</h2>
+        <div className={`h-fit py-3 ${isEyeCatcher ? 'px-5 sm:px-0' : ''}`}>
+          <h2
+            className={`relative whitespace-pre-line font-bold ${
+              isEyeCatcher ? 'text-xl md:text-3xl' : 'text-base md:text-xl'
+            }`}
+          >
+            {title}
+          </h2>
+          {isEyeCatcher && (
+            <p className="truncate-line-3 mt-2 text-xs text-lighter-gb-purple dark:text-lighter-gb-purple md:text-sm">
+              {content}
+            </p>
+          )}
           <div className="mt-5 flex flex-wrap items-center gap-x-10 gap-y-2 ">
             <div className="flex items-center gap-2">
               <TagIcon />

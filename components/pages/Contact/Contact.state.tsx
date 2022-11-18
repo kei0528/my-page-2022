@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { fetchStatus } from '../../../statics/conditions';
 
 export const useCompState = () => {
   const {

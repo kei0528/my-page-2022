@@ -12,7 +12,6 @@ module.exports = {
         'army-green': '#516961',
         'dark-green': '#213801',
         'life-green': '#54D57C',
-        black: '#191818',
         'gb-purple': '#3F4595',
         'light-gb-purple': '#4C53A7',
         'lighter-grey': '#cdcccc',

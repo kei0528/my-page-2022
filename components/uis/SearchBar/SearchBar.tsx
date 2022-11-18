@@ -1,3 +1,5 @@
+'use client';
+
 import s from './SearchBar.module.scss';
 import Image from 'next/image';
 import { ChangeEventHandler, FormEventHandler } from 'react';

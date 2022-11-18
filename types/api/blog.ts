@@ -6,4 +6,5 @@ export type BlogPostType = {
     categories: string[];
     thumbnail: string;
   };
+  content: string;
 };
