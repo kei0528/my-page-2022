@@ -1,4 +1,3 @@
-import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import matter from 'gray-matter';
 import fs from 'fs';
@@ -7,6 +6,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { BlogPostType } from '../../../types/api/blog';
 
 const blogHandler = (req: NextApiRequest, res: NextApiResponse) => {
+  const dayjs = require('dayjs');
   dayjs().format();
   dayjs.extend(customParseFormat);
 
@@ -27,7 +27,7 @@ const blogHandler = (req: NextApiRequest, res: NextApiResponse) => {
     return dateUnix_b - dateUnix_a;
   });
 
-  res.status(200).json(posts);
+  res.status(200).json(postsSortedByLatest);
 };
 
 export default blogHandler;
