@@ -41,11 +41,11 @@ const BlogPost = async ({ params }: { params?: any }) => {
           <time className="font-game text-3xl leading-game-md text-dark-purple dark:text-lighter-gb-purple md:text-game-md">
             {frontmatter.date}
           </time>
-          <h1 className="mt-2 mb-5 text-3xl font-bold tracking-wide text-gb-purple dark:text-light-text-purple md:mt-2 md:mb-9 md:text-5xl">
+          <h1 className="mt-2 mb-5 text-3xl font-bold tracking-wide text-gb-purple dark:text-light-text-purple md:mt-4 md:mb-9 md:text-5xl md:leading-[60px]">
             {frontmatter.title}
           </h1>
           <div
-            className={`text-lg leading-6 md:text-xl md:leading-7 ${s.template_html}`}
+            className={`template-html text-base leading-6 md:text-lg md:leading-7`}
             dangerouslySetInnerHTML={{ __html: marked(content) }}
           ></div>
         </article>

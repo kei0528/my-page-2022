@@ -7,28 +7,17 @@ thumbnail: '/blog/images/code.webp'
 
 I started to write codes two years ago, in 2020 spring. Back then, I dreamed to have a self-made blog page.  I tried many different ways of creating blog, like headless CMS, WordPress, etc. However, I was not very happy with the progress and could never bring it to an end.
 
-What I wanted to expect from my blog is fast and 100% customizable.  And the solution to fulfil my wish was very simple. Here it is. ↓
+What I wanted to expect from my blog is fast and 100% customizable. Here's the solution I found.
 
-## Project Setup
+This page is made with [TypeScript](https://www.typescriptlang.org/) with [Next.js](https://nextjs.org/).  These are the tools that I use in most projects. I was thinking of creating with another framework such as [Solid.js](https://www.solidjs.com/), [Svelte](https://svelte.dev/), [Qwik](https://qwik.builder.io/) or [Astro](https://astro.build/). All of these frameworks offer to help create fast web applications and a great developer experience.  After a few hours of researching, I came back to Next.js, because there was a new version (v.13), which brought many new features and I really wanted to try them out.
 
-### First - Language
+When I started creating this page, there were nearly no tutorials or guides for handling server-side rendering. Also, many libraries did not support the new version of Next.js. Now, two weeks after the release of Next.js 13, I found many good resources to learn about, and I can refactor the code with help of it.
 
-I use TypeScript.
-I always prefer writing TS to JS, even in small projects. I worked on many pure vanilla JS projects and always hated seeing 'undefined' errors or timing issues. With TypeScript, you could find these errors in an earlier phase and prevent spending time to fix them. Of course, there are many more cool features to using TypeScript, however, this is for me the biggest reason why I love TypeScript.
+In this project, [Tailwind CSS](https://tailwindcss.com/) and [Sass](https://sass-lang.com/) are used to write styling, and [Redux](https://redux.js.org/) to store global states. I'm not a big fan of Redux and actually wanted to use other state management libraries like [Recoil](https://recoiljs.org/) or [Jotai](https://jotai.org/). However, these did not support Next.js 13's new page structure 😭
 
-### Framework
+Another thing that Next.js 13's new page structure - "App directory" does not support (yet) is API Routes. In order to create APIs, you have to create an "api" folder under the "pages" directory. There I created a function, that hosts all the blog data which is stored in "public" directory as markdown files. Also, the function to send mails is inside "api" folder. 
+I really love API Routes feature and hope, that this keeps officially supported.
 
-When I was planning of making this page, Next.js v.13 got released. So many features were added on v.13, and I really wanted to try this out.  However, it leads me into lots of trouble afterwards...
+OK, that's pretty much it about technical overview of my blog. I have still more ideas that I want to add. I will keep updated 🙂
 
-### State management library
-
-This was the first difficulty that Next.js v.13 caused.
-In this application size, a state management library is not very necessary. Even so, I think these tools help me to keep the code clean. I mainly use Redux and Recoil. But this time I wanted to try another library, which is"Jotai".  It is a library that is inspired by Recoil. APIs are very simple and documentation is clean. I installed it and started to set up the <Provider>. Here came the problem. Where does the Provider come to!? Since I use Next.js v.13 and already tried the experimental feature "app directory", the whole file structure is different. I researched on the Internet, but since this was just a few hours after the release of v.13, there were no articles or GitHub issues regarding it. After a couple of hours, I noticed that this library was not supported yet. Then I tried Recoil, but this was also not supported. Sadly, Redux was the only state management tool that I could use with Next.js v.13. For now, I use Redux, but in the future, I will definitely migrate this to another library.
-
-### Styling
-
-I know that many people disagree, but I love Tailwind CSS. For me, the best tool to increase productivity. There is no need to import variables and think about class names. You can just start writing styling. I love it.
-
----
-
-There are much more things to write about this application, such as hosting, how blogs are posted and so on. But today, that was it! This page is still under construction and needs about two more weeks to get done. Let's see how it evolves!
+\* You can find code in my [Github](https://github.com/kei0528/my-page-2022)😀

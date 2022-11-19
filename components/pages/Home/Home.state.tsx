@@ -62,7 +62,7 @@ export const useCompState = ({
               playAttackSound();
               const imgElm = imageRef.current!.querySelector('img');
               imgElm!.classList.add('attacked');
-              setCurrPlot(10);
+              setCurrPlot(7);
 
               const damageAmount = Math.floor(Math.random() * 15) + 30;
               // After attack

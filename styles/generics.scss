@@ -15,3 +15,40 @@
     opacity: 1;
   }
 }
+
+.template-html {
+  h1,
+  h2 {
+    @apply mb-3 mt-8 text-lg font-semibold md:mt-10 md:text-xl;
+  }
+
+  h3 {
+    @apply mb-2 mt-4 text-base font-bold md:text-lg;
+  }
+
+  h4,
+  h5,
+  h6 {
+    @apply my-2 text-sm font-bold md:text-base;
+  }
+
+  p {
+    @apply mt-2 mb-6 leading-7 md:leading-8;
+  }
+
+  hr {
+    @apply my-6;
+  }
+
+  a {
+    @apply text-turkey underline;
+  }
+}
+
+.truncate-line-3 {
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

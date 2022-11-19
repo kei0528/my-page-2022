@@ -26,11 +26,3 @@
 html:where(.dark) {
   @apply bg-black text-white;
 }
-
-.truncate-line-3 {
-  display: -webkit-box;
-  max-width: 100%;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
