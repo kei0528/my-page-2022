@@ -1,4 +1,5 @@
-// import customParseFormat from 'dayjs/plugin/customParseFormat';
+import dayjs from 'dayjs';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
 import matter from 'gray-matter';
 import fs from 'fs';
 import path from 'path';
@@ -6,9 +7,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { BlogPostType } from '../../../types/api/blog';
 
 const blogHandler = (req: NextApiRequest, res: NextApiResponse) => {
-  // const dayjs = require('dayjs');
-  // dayjs().format();
-  // dayjs.extend(customParseFormat);
+  dayjs().format();
+  dayjs.extend(customParseFormat);
 
   const files = fs.readdirSync(path.join(process.cwd() + '/public/posts'));
 
@@ -20,12 +20,12 @@ const blogHandler = (req: NextApiRequest, res: NextApiResponse) => {
   }) as unknown;
   const posts = proceccedPosts as BlogPostType[];
 
-  // const postsSortedByLatest = posts.sort((a, b) => {
-  //   const dateUnix_a = dayjs(a.frontmatter.date, 'DD.MM.YYYY').unix();
-  //   const dateUnix_b = dayjs(b.frontmatter.date, 'DD.MM.YYYY').unix();
+  const postsSortedByLatest = posts.sort((a, b) => {
+    const dateUnix_a = dayjs(a.frontmatter.date, 'DD.MM.YYYY').unix();
+    const dateUnix_b = dayjs(b.frontmatter.date, 'DD.MM.YYYY').unix();
 
-  //   return dateUnix_b - dateUnix_a;
-  // });
+    return dateUnix_b - dateUnix_a;
+  });
 
   res.status(200).json(posts);
 };
