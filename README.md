@@ -1,34 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
 
-## Getting Started
+<img src="/public/assets/images/Image_Readme.webp">
 
-First, run the development server:
+<h1>Hej! I'm Keisuke!</h1>
+  <p>Nice to see you!</p>
+  <p>In this repo, you can check how the code of my website look like. In case if you didn't checked my website yet, here's the link👇</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<a href="https://kei-lv5.vercel.app/"><strong><font size="5" color="#1086b2">Dev Kei lv.5</font></strong></a>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<h2>FAQ</h2>
+<h3>What kind technologies are used?</h3>
+<p>I use TypeScript with Next.js. Styling is written with Tailwind CSS and SCSS. It's my favourite setup!</p>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+<h3>Why does the home page look like Pokémon?</h3>
+<p>The first game I ever played was Pokemon Ruby and it took me into the digital world. If this game had not existed, I probably wouldn't have become a programmer! Pokemon Ruby is my roots as a programmer.</p>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<h3>How long did you spend to develop this website?</h3>
+<p>It took about 2 - 3 weeks, total 65 hours from design to hosting. But you know, the most hardest task was writing text about me :D </p>
+<p>I'm still working on this project to add more features and making fixes.</p>
+<p>Here in this badge below, you can see how many time I spend for this project.</p>
 
-## Learn More
+<a href="https://wakatime.com/badge/user/1e6bdb97-6c7c-43a5-91be-947f6fba5472/project/faa87368-694d-4880-93b8-a00c7c8c026f"><img src="https://wakatime.com/badge/user/1e6bdb97-6c7c-43a5-91be-947f6fba5472/project/faa87368-694d-4880-93b8-a00c7c8c026f.svg" alt="wakatime"></a>
 
-To learn more about Next.js, take a look at the following resources:
+<h3>Why "Hej"?</h3>
+<p>Because I'm planning to move to Sweden and learning Swedish.</p>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+</div>
