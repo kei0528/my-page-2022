@@ -6,10 +6,10 @@ import path from 'path';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { BlogPostType } from '../../../types/api/blog';
 
-dayjs().format();
-dayjs.extend(customParseFormat);
-
 const blogHandler = (req: NextApiRequest, res: NextApiResponse) => {
+  dayjs().format();
+  dayjs.extend(customParseFormat);
+
   const files = fs.readdirSync(path.join(process.cwd() + '/public/posts'));
 
   const proceccedPosts = files.map((filename) => {
