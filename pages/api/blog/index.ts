@@ -27,7 +27,7 @@ const blogHandler = (req: NextApiRequest, res: NextApiResponse) => {
     return dateUnix_b - dateUnix_a;
   });
 
-  res.status(200).json(postsSortedByLatest);
+  res.status(200).json(posts);
 };
 
 export default blogHandler;
