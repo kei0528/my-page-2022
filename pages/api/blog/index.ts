@@ -1,8 +1,13 @@
+import dayjs from 'dayjs';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+import matter from 'gray-matter';
 import fs from 'fs';
 import path from 'path';
-import matter from 'gray-matter';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { BlogPostType } from '../../../types/api/blog';
+
+dayjs().format();
+dayjs.extend(customParseFormat);
 
 const blogHandler = (req: NextApiRequest, res: NextApiResponse) => {
   const files = fs.readdirSync(path.join(process.cwd() + '/public/posts'));
@@ -14,7 +19,15 @@ const blogHandler = (req: NextApiRequest, res: NextApiResponse) => {
     return { slug, frontmatter, content };
   }) as unknown;
   const posts = proceccedPosts as BlogPostType[];
-  res.status(200).json(posts);
+
+  const postsSortedByLatest = posts.sort((a, b) => {
+    const dateUnix_a = dayjs(a.frontmatter.date, 'DD.MM.YYYY').unix();
+    const dateUnix_b = dayjs(b.frontmatter.date, 'DD.MM.YYYY').unix();
+
+    return dateUnix_b - dateUnix_a;
+  });
+
+  res.status(200).json(postsSortedByLatest);
 };
 
 export default blogHandler;

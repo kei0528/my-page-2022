@@ -1,6 +1,6 @@
 ---
 title: 'About my blog - technical overview'
-date: '13.11.2022'
+date: '19.11.2022'
 categories: ['Dev']
 thumbnail: '/blog/images/code.webp'
 ---
