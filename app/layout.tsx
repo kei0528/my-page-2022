@@ -42,7 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta property="og:site_name" content="Dev Kei lv.5" />
         <meta property="og:locale" content="en" />
       </head>
-      <body className="portrait:h-realMaxVhWithMenu portrait:pb-[60px] landscape:min-h-realMaxVh landscape:pr-[60px]">
+      <body className="portrait:h-realMaxVhWithMenu portrait:pb-[60px] landscape:min-h-realMaxVh landscape:pr-[52px]">
         <Provider>
           <SideNav />
           <GlobalMenu />
