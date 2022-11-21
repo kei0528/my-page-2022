@@ -4,7 +4,11 @@
 
 ### Page
 
+- [ ] Create 404 Page
+
 ### Uis
+
+- [ ] Create Loading Component
 
 ### Triggers
 
