@@ -2,7 +2,6 @@
 
 import s from './Contact.module.scss';
 import Image from 'next/image';
-import { useForm } from 'react-hook-form';
 import { BaseMainLayout } from '../../uis/BaseMainLayout';
 import { Header } from '../../uis/Header';
 import { sendMail } from '../../../utils/mailServices';

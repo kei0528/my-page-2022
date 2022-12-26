@@ -86,7 +86,7 @@ export const useCompState = ({
             },
           },
           {
-            label: 'Write Mail',
+            label: 'Message',
             handler: () => {
               router.push('/v1/contact');
             },

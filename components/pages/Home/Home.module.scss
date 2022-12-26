@@ -36,7 +36,7 @@
   }
 
   @screen md {
-    box-shadow: 0px 11px 70px 50px #000000bf;
+    box-shadow: 0px 11px 70px 50px #3f3f3fa1;
   }
 }
 
@@ -51,7 +51,7 @@
 }
 
 .image_wrapper {
-  @apply relative mt-auto flex aspect-[1/1.39] max-w-[200px] items-end justify-end portrait:w-[25vh] portrait:min-w-[195px] landscape:w-[30vh];
+  @apply relative mt-auto flex aspect-[1/1] max-w-[280px] items-end justify-end portrait:w-[35vh] portrait:min-w-[195px] landscape:w-[42vh];
 
   animation: appearing 1s 0.1s 1 forwards;
   grid-area: kei;

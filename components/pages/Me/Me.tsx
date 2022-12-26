@@ -36,67 +36,46 @@ const Me = () => {
           </div>
         </div>
 
-        <article className="template-html my-12 text-center text-base sm:text-lg">
+        <article className="template-html my-12 text-left text-base sm:text-lg">
           <h2 className="mb-6 text-2xl font-bold">Nice to see you!</h2>
           <p>
-            My name is Keisuke. I&apos;m a frontend developer, coffee scientist and father of two energetic sons based
-            in Pirmasens - a small town in Germany close to France. Currently planning to move to Sweden🇸🇪
+            I’m Keisuke - a father of two energetic sons, passionate about programming and coffee. Together with my
+            sons, I love to go to the forest and pick up mushrooms, collect wild herbs and discover nature.
           </p>
           <p>
-            Before I started to work as a developer, I was a barista for many years. I love coffee! Especially
-            Ethiopian-washed processed coffee. Hmm, but Kenyan is also great… Wait Burundi is... When I start to talk
-            about coffee, someone has to stop me! I joy talking about coffee as much as I love drinking coffee.
+            For many years, I worked as a barista in a small coffee shop. I loved serving my coffee to my customers and
+            listening to stories of their life.
           </p>
           <p>
-            I loved life as a barista, however, the time of Covid arrived and the café where I worked had to close for a
-            while. At this time, I decided to create a{' '}
-            <a
-              className="!dark:text-[#e5bc6b] !text-[#c5963a]"
-              href="https://buddekaffee.de"
-              target="_blank"
-              rel="noreferrer"
-            >
-              website
-            </a>{' '}
-            for the café and started to learn HTML/CSS/JS. And it lit a fire in me! It was so fun to learn it, and I was
-            surprised how the codes I write on my editor turn to the website. I felt like it was magic! After a few
-            hours of learning, I researched how to become a software developer. After a year of self-learning, I got
-            hired by a company in Berlin -
-            <a className="ml-1 !text-[#0cc147]" href="https://octily.com/" target="_blank" rel="noreferrer">
-              Octily
-            </a>
-            , and am still working there with a lot of excitement.
+            One regular customer told about her travel around the world. She slept in a tent in the middle of the
+            Sahara, climbed up to Irish mountain - even though she’s 80 years old.
           </p>
           <p>
-            At Octily, we develop creative web applications that help people in the HR industry to stay productive.
-            Thanks to many clients of all types and genres, we develop a diverse range of applications, from dashboard
-            pages to interactive maps.
+            Some other customer told he was a gynaecologist in Africa and has a brother from Pakistan - however, it was
+            all lie. He was a sailor and lived in Africa for many years. His best friend came from Pakistan.
+          </p>
+
+          <p>
+            I was surprised how diverse people can be. My dream at this time was to become a great barista and run my
+            coffee shop with my wife. But on the other hand, I was always worried about my future. My father also worked
+            in the food industry and I knew how tough it can be. Life of working as a barista and running own business
+            means that there is no time to spend with family.
           </p>
           <p>
-            At the weekend, I join a dev team of a{' '}
-            <a className="!text-red" href="https://plusclass-sports-incubation.co.jp/" target="_blank" rel="noreferrer">
-              startup company
-            </a>{' '}
-            in Japan and develop a matching tool that connects sports teams to sponsors. Here we try many different
-            modern technologies and discuss how we can create a FAST web application.
+            In 2020, because of Covid pandemic, the coffee shop where I worked had to close for many months. At this
+            time, my wife suggested me to try programming. She knew that I was a computer nerd when I was a teenager. I
+            followed her idea and started to learn programming. I built my first website using HTML, CSS and JavaScript.
+            This lit fire in me. It was just so much fun to write program and wanted to learn more and more. After one
+            year of teaching programming myself, I changed my job to Frontend Developer.
           </p>
           <p>
-            I&apos;m always very curious about exploring technologies and playing with many languages & frameworks -
-            however, my most strength and favourite techs are below:
+            My main focus is developing web applications. In my full-time and part-time job, I write frontend codes and
+            in my free time I try to get better at writing backend staff.
           </p>
-          <ul className="my-10 flex flex-col items-center gap-4">
-            <Listitem label="JavaScript/Node.js/TypeScript" />
-            <Listitem label="React/Next.js" />
-            <Listitem label="Solid.js" />
-            <Listitem label="Express" />
-            <Listitem label="Tailwind CSS" />
-          </ul>
           <p>
-            For two years, I have been writing lines of code every day, but I never get bored. I always would be happy
-            to work on a challenging project and open to trying and learning something new🙂 Drop me some{' '}
-            <Link href="/v1/contact">message</Link> and let&apos;s talk about technology (and coffee☕️)!
+            I love programming and can’t stop learning it. Maybe at some point, I return back to the coffee industry -
+            but before doing that, I have still so many ideas that I want to try with programming!
           </p>
-          <p>Tack!</p>
         </article>
       </BaseMainLayout>
     </>

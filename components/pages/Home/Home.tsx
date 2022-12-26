@@ -51,7 +51,7 @@ const Home = () => {
                 ref={lifeGaugeRef}
               />
               <div className={s.image_wrapper} ref={imageRef}>
-                <Image src="/assets/images/Image_Keisuke-game.webp" fill className={s.img} alt="" />
+                <Image src="/assets/images/Avatar_Kei02.webp" fill className={s.img} alt="" />
               </div>
               {!plot[currPlot].options ? (
                 <GameMessageBox
