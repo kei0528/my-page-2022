@@ -18,13 +18,14 @@
 
 .template-html {
   h1,
-  h2 {
+  h2,
+  h3 {
     @apply mb-3 mt-8 text-lg font-semibold md:mt-10 md:text-xl;
   }
 
-  h3 {
-    @apply mb-2 mt-4 text-base font-bold md:text-lg;
-  }
+  // h3 {
+  //   @apply mb-2 mt-4 text-base font-bold md:text-lg;
+  // }
 
   h4,
   h5,
@@ -33,7 +34,7 @@
   }
 
   p {
-    @apply mt-2 mb-6 leading-7 md:leading-8;
+    @apply mt-2 mb-2 leading-7 md:leading-8;
   }
 
   hr {
@@ -42,6 +43,10 @@
 
   a {
     @apply text-turkey underline;
+  }
+
+  img {
+    @apply my-8;
   }
 }
 

@@ -30,7 +30,7 @@ After developing the website for the café, I started to learn JavaScript again.
 
 ### November 2020 - JavaScript to next level
 
-Writing JavaScript get much more fun than before, and I wanted to move to the next step. I learned about Webpack, ES Lint and other things to upgrade my development environment. Then it was time to decide which UI Framework I learn. In 2020, the main Framework was React, Vue and Angular. I compared documentation and watched videos that will be discussed about frameworks. For me, React seemed much more friendly than other frameworks. So I started to follow React’s official tutorial and read the documentation.
+Writing JavaScript became much more fun than before, and I wanted to move to the next step. I learned about Webpack, ES Lint and other things to upgrade my development environment. Then it was time to decide which UI Framework I learn. In 2020, the main Framework was React, Vue and Angular. I compared documentation and watched videos that will be discussed about frameworks. For me, React seemed much more friendly than other frameworks. So I started to follow React’s official tutorial and read the documentation.
 
 ### December 2020 - React, Redux, Node.js
 

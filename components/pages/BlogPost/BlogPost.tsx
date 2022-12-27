@@ -1,6 +1,4 @@
-import s from './BlogPost.module.scss';
 import Link from 'next/link';
-import Image from 'next/image';
 import { marked } from 'marked';
 import { Header } from '../../uis/Header';
 import { BaseMainLayout } from '../../uis/BaseMainLayout';
