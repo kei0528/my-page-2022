@@ -47,13 +47,13 @@ I started to work on my portfolio. My idea was to create a forum where everyone 
 
 ### March 2021 - Second portfolio
 
-I started to create my second portfolio. It’s a news page. Again here I used TypeScript and React. To get news, I used News API, which was my biggest mistake. The documentation says that using this API for development is free, but if you want to publish you have to pay money otherwise, you can’t fetch any data. I realized it too late. In the end, I put the static news data in a local file and displayed this instead. I learned how important it is to read the documentation.
-<a href="https://nachrichten-heute.web.app" target="_blank">Nachrichten Heute</a>
+I started to create my second portfolio - my previous website. Here again, I used TypeScript and React. I really enjoyed building this page and when I finished it, I was so proud of myself, how much I learned in one year.
+<a href="https://my-web-site-2d168.web.app" target="_blank">Personal Website (legacy)</a>
 
 ### April 2021 - Third portfolio
 
-I started to create the final project before searching for a job as a developer. That was my previous website. Here again, I used TypeScript and React. I really enjoyed building this page and when I finished it, I was so proud of myself, how much I learned in one year.
-<a href="https://my-web-site-2d168.web.app" target="_blank">Personal Website (legacy)</a>
+I started to create the final project before searching for a job as a developer. It’s a news page. Again here I used TypeScript and React. To get news, I used News API, which was my biggest mistake. The documentation says that using this API for development is free, but if you want to publish you have to pay money otherwise, you can’t fetch any data. I realized it too late. In the end, I put the static news data in a local file and displayed this instead. I learned how important it is to read the documentation.
+<a href="https://nachrichten-heute.web.app" target="_blank">Nachrichten Heute</a>
 
 ### May 2021 - Preparing for job interview
 

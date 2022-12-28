@@ -13,11 +13,11 @@ This page is made with [TypeScript](https://www.typescriptlang.org/) with [Next.
 
 When I started creating this page, there were nearly no tutorials or guides for handling server-side rendering. Also, many libraries did not support the new version of Next.js. Now, two weeks after the release of Next.js 13, I found many good resources to learn about, and I can refactor the code with help of it.
 
-In this project, [Tailwind CSS](https://tailwindcss.com/) and [Sass](https://sass-lang.com/) are used to write styling, and [Redux](https://redux.js.org/) to store global states. I'm not a big fan of Redux and actually wanted to use other state management libraries like [Recoil](https://recoiljs.org/) or [Jotai](https://jotai.org/). However, these did not support Next.js 13's new page structure 😭
+In this project, [Tailwind CSS](https://tailwindcss.com/) and [Sass](https://sass-lang.com/) are used to write styling, and [Redux](https://redux.js.org/) to store global states. I'm not a big fan of Redux and actually wanted to use other state management libraries like [Recoil](https://recoiljs.org/) or [Jotai](https://jotai.org/). However, these did not support Next.js 13's new page structure.
 
 Another thing that Next.js 13's new page structure - "App directory" does not support (yet) is API Routes. In order to create APIs, you have to create an "api" folder under the "pages" directory. There I created a function, that hosts all the blog data which is stored in "public" directory as markdown files. Also, the function to send mails is inside "api" folder. 
 I really love API Routes feature and hope, that this keeps officially supported.
 
-OK, that's pretty much it about technical overview of my blog. I have still more ideas that I want to add. I will keep updated 🙂
+OK, that's pretty much it about technical overview of my blog. I have still more ideas that I want to add. I will keep updated.
 
-\* You can find code in my [Github](https://github.com/kei0528/my-page-2022)😀
+\* You can find code in my [Github](https://github.com/kei0528/my-page-2022)
