@@ -48,10 +48,10 @@ export const CardLandscape = ({
   return (
     <Link href={`/v1/blog/${slug}`}>
       <article
-        className={`relative flex gap-6 rounded-lg border-3 border-lightest-grey bg-white  px-5 py-1 duration-200 hover:-translate-y-1 hover:shadow-md dark:border-2 dark:border-lighter-gb-purple dark:bg-black sm:pl-1 ${
+        className={`relative flex gap-6 rounded-lg border-3 border-lightest-grey bg-white  px-5 py-1 duration-200 hover:-translate-y-1 hover:shadow-md dark:border-2 dark:border-light-text-purple dark:bg-black sm:pl-1 ${
           isEyeCatcher
             ? 'flex-col gap-0 px-0 dark:border-light-text-purple sm:flex-row sm:gap-6 sm:px-5'
-            : 'border-lightest-grey dark:border-darker-grey'
+            : 'border-lightest-grey'
         }`}
       >
         <div
