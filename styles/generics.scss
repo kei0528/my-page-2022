@@ -68,6 +68,10 @@
   pre {
     @apply my-10 overflow-scroll border border-darker-grey bg-slate-100 p-8 dark:border-white dark:bg-slate-800;
   }
+
+  code {
+    @apply text-xs sm:text-sm;
+  }
 }
 
 .truncate-line-3 {
