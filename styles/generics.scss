@@ -48,6 +48,26 @@
   img {
     @apply my-8;
   }
+
+  table,
+  iframe {
+    @apply my-10;
+  }
+
+  table,
+  th,
+  td {
+    @apply border border-darker-grey font-normal dark:border-white;
+  }
+
+  td,
+  th {
+    @apply px-3 py-2;
+  }
+
+  pre {
+    @apply my-10 overflow-scroll border border-darker-grey bg-slate-100 p-8 dark:border-white dark:bg-slate-800;
+  }
 }
 
 .truncate-line-3 {
