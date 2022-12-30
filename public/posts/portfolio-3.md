@@ -1,5 +1,5 @@
 ---
-title: 'Portfolio 2021 - Portfolio 2021 - My Website'
+title: 'Portfolio 2021 - My Website'
 date: '28.12.2022'
 categories: ['Dev']
 thumbnail: '/blog/images/yellow-shirt.webp'
