@@ -16,7 +16,7 @@ const Arrow = () => {
 };
 
 async function getPost({ slug }: { slug: string }) {
-  const data = await fetch(urls.baseUrl + 'api/blog/' + slug);
+  const data = await fetch(urls.baseUrl + 'api/blog/' + slug, { cache: 'force-cache' });
   const res = await data.json();
   return res;
 }
@@ -33,7 +33,6 @@ const BlogPost = async ({ params }: { params?: any }) => {
             href="/v1/blog"
           >
             <Arrow />
-            {/* <Image src="/assets/icons/Icon_Arrow-left.svg" width={16} height={24} alt="" /> */}
             Back
           </Link>
           <time className="font-game text-3xl leading-game-md text-dark-purple dark:text-lighter-gb-purple md:text-game-md">
