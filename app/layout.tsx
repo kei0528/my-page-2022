@@ -7,6 +7,7 @@ import { GlobalMenu } from '../components/triggers/GlobalMenu';
 import { Provider } from '../components/triggers/Provider';
 import { isDarkmode } from '../statics/conditions';
 import { useEffect } from 'react';
+import { Analytics } from '../components/triggers/Analytics';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -47,6 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <SideNav />
           <GlobalMenu />
           {children}
+          <Analytics />
         </Provider>
       </body>
     </html>
