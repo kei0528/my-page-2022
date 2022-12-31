@@ -23,7 +23,7 @@ export const FirstLoadView = React.memo(() => {
   const message = useRef('Do you want turn on the sound?');
 
   return (
-    <main className="bg-black p-5 sm:p-8 portrait:h-realMaxVhWithMenu landscape:h-realMaxVh">
+    <main className="bg-black p-5 sm:p-8 portrait:h-realMaxVh landscape:h-realMaxVh">
       <div className="mx-auto mt-[10vh] max-w-page">
         <p>
           <GameMessage message={message.current} />

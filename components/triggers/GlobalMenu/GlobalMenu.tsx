@@ -83,9 +83,7 @@ export const GlobalMenu = ({ className }: { className?: string }) => {
       </nav>
       <div
         className={
-          isShown
-            ? 'fixed top-0 left-0 z-30 w-screen bg-trans-grey portrait:h-realMaxVhWithMenu landscape:h-realMaxVh'
-            : ''
+          isShown ? 'fixed top-0 left-0 z-30 w-screen bg-trans-grey portrait:h-realMaxVh landscape:h-realMaxVh' : ''
         }
         onClick={() => {
           dispatch(toggleGlobalMenuIsShown());

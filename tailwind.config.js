@@ -32,12 +32,10 @@ module.exports = {
         page: '800px',
       },
       height: {
-        realMaxVh: 'var(--real-max-vh)',
-        realMaxVhWithMenu: 'var(--real-max-vh-with-menu)',
+        realMaxVh: '100svh',
       },
       minHeight: {
-        realMaxVh: 'var(--real-max-vh)',
-        realMaxVhWithMenu: 'var(--real-max-vh-with-menu)',
+        realMaxVh: '100svh',
       },
       backgroundImage: {
         'triangle-right': 'url(/assets/icons/Icon_Triangle-right.svg)',
