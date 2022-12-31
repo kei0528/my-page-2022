@@ -36,7 +36,7 @@ const Home = () => {
         <main
           id="particle-bg"
           ref={mainRef}
-          className="flex items-center justify-center bg-black portrait:h-realMaxVh landscape:h-realMaxVh"
+          className="flex items-center justify-center bg-black portrait:h-[calc(100dvh-60px)] landscape:h-realMaxVh"
         >
           <Particles id="particles-bg" init={particlesInit} options={particles} />
           <div
