@@ -39,7 +39,7 @@ I was thinking of using some headless CMS to manage dynamic content, but since t
 
 The owners wanted to have a contact form. I also think having a contact form is nice for users.
 
-I used the library ‘[Nodemailer]’(https://nodemailer.com/about/). With that, you can create a function for sending mail very easily. This function runs on the server side under pages/api directory.
+I used the library [Nodemailer](https://nodemailer.com/about/). With that, you can create a function for sending mail very easily. This function runs on the server side under pages/api directory.
 
 ### Add Instagram dynamic content
 
