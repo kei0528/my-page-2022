@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { getBlogPosts } from '../../../utils/blogServices';
 import { BaseMainLayout } from '../../uis/BaseMainLayout';
 import { CardLandscape } from '../../uis/CardLandscape';

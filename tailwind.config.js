@@ -50,8 +50,8 @@ module.exports = {
         'game-md': '36px',
       },
       fontFamily: {
-        body: 'outfit-v6',
-        game: 'game-font',
+        body: 'var(--outfit-v6)',
+        game: 'var(--32bit)',
       },
       boxShadow: {
         btn: '0 -3px 0 0',
