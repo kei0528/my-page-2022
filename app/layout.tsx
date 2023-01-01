@@ -2,33 +2,12 @@
 import 'modern-css-reset';
 import '../styles/globals.scss';
 import '../styles/generics.scss';
-import localfont from '@next/font/local';
 import { SideNav } from '../components/triggers/SideNav';
 import { GlobalMenu } from '../components/triggers/GlobalMenu';
 import { Provider } from '../components/triggers/Provider';
 import { isDarkmode } from '../statics/conditions';
 import { useEffect } from 'react';
 import { Analytics } from '../components/triggers/Analytics';
-
-const outfit = localfont({
-  src: [
-    {
-      path: './fonts/outfit-v6/outfit-v6-latin-regular.ttf',
-      weight: '400',
-    },
-    {
-      path: './fonts/outfit-v6/outfit-v6-latin-700.ttf',
-      weight: 'bold',
-    },
-  ],
-  variable: '--outfit-v6',
-});
-
-const gameFont = localfont({
-  src: './fonts/32bit/32bit.ttf',
-  weight: '400',
-  variable: '--32bit',
-});
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -38,11 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   }, []);
 
   return (
-    <html
-      lang="en"
-      data-lt-installed={true}
-      className={`${isDarkmode ? 'dark' : ''} ${outfit.variable}  ${gameFont.variable}`}
-    >
+    <html lang="en" data-lt-installed={true} className={isDarkmode ? 'dark' : ''}>
       <head>
         <title>Dev Kei lv.5</title>
         <meta name="google-site-verification" content="FGbJ7wlLJHYba9nxMm9lt9zVipFsIjtPWLW5Ic21kcU" />

@@ -2,8 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'game-font';
+  src: url('../public/assets/fonts/32bit/32bit.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: outfit-v6;
+  font-weight: 400;
+  src: url('../public/assets/fonts/outfit-v6/outfit-v6-latin-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: outfit-v6;
+  font-weight: 700;
+  src: url('../public/assets/fonts/outfit-v6/outfit-v6-latin-700.ttf') format('truetype');
+}
+
 * {
-  @apply font-body font-normal;
+  @apply font-body;
 }
 
 html:where(.dark) {
