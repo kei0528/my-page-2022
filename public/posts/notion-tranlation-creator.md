@@ -42,4 +42,4 @@ About how to use the program, I wrote everything in readme.md which can be found
 
 ### Links
 
-[GitHub](https://github.com/kei0528/translation-file-creator)
+- <a href="https://github.com/kei0528/translation-file-creator" target="_blank">GitHub</a>

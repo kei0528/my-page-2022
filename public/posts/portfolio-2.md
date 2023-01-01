@@ -18,5 +18,5 @@ Like in my first portfolio, I used TypeScript and React. I wanted to upgrade my 
 
 ### Links
 
-- [Nachrichten Heute](<[https://nachrichten-heute.web.app/](https://nachrichten-heute.web.app/)>)
-- [GitHub](https://github.com/kei0528/News-Today)
+- <a href="https://nachrichten-heute.web.app" target="_blank">Nachrichten Heute</a>
+- <a href="https://github.com/kei0528/News-Today" target="_blank">GitHub</a>

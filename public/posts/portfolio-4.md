@@ -39,7 +39,7 @@ I was thinking of using some headless CMS to manage dynamic content, but since t
 
 The owners wanted to have a contact form. I also think having a contact form is nice for users.
 
-I used the library [Nodemailer](https://nodemailer.com/about/). With that, you can create a function for sending mail very easily. This function runs on the server side under pages/api directory.
+I used the library <a href="https://nodemailer.com/about" target="_blank">Nodemailer</a>. With that, you can create a function for sending mail very easily. This function runs on the server side under pages/api directory.
 
 ### Add Instagram dynamic content
 
@@ -71,6 +71,6 @@ The previous version of this website was made 2 years ago and when I compare thi
 
 ### Links
 
-- [Budde Kaffee ver.2022](https://buddekaffee-2022.vercel.app)
-- [Budde Kaffee ver.2020](https://buddekaffee.de)
-- [GitHub](https://github.com/kei0528/buddekaffee-2022)
+- <a href="https://buddekaffee-2022.vercel.app" target="_blank">Budde Kaffee ver.2022</a>
+- <a href="https://buddekaffee.de" target="_blank">Budde Kaffee ver.2020</a>
+- <a href="https://github.com/kei0528/buddekaffee-2022" target="_blank">GitHub</a>

@@ -98,7 +98,7 @@ Under app directory, it seems not able to create APIs like in pages/api. I’m n
 
 In this project, the functions for blog and contact-form are under pages/api directory.
 
-All blog posts are stored inside the public folder as markdown files and by making a GET request to api/blog, these data will be processed and delivered to the frontend. This tutorial helped me a lot → https://www.youtube.com/watch?v=MrjeefD8sac
+All blog posts are stored inside the public folder as markdown files and by making a GET request to api/blog, these data will be processed and delivered to the frontend. This tutorial helped me a lot → <a href="https://www.youtube.com/watch?v=MrjeefD8sac" target="_blank">Static Blog With Next.js and Markdown</a>
 
 For sending mail, I just need to do a POST request to /api/mail. Nodemailer processes the request and sends mail to my mailbox.
 
@@ -129,3 +129,8 @@ I really enjoyed working on this project.
 Simple, yet not too cool design, Pokémon like home page, Game Boy like menu, Blog page … I think all the concepts that I planned have been covered.
 
 I’m still at the beginning of the long road to becoming a great developer and have tons of stuff to learn. Keep learning, hard-working and give always my best!
+
+### Links
+
+- <a href="https://github.com/kei0528/my-page-2022" target="_blank">Github</a>
+- <a href="https://my-web-site-2d168.web.app/" target="_blank">My Website ver.2021</a>

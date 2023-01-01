@@ -27,5 +27,5 @@ I love the idea of this app and have a lot more ideas to scale up this app. For 
 
 ### Links
 
-- [Espresso Recipe Forum](https://coffee-app-252a4.web.app/)
-- [GitHub](https://github.com/kei0528/Espresso-Recipe-Forum)
+- <a href="https://coffee-app-252a4.web.app" target="_blank">Espresso Recipe Forum</a>
+- <a href="https://github.com/kei0528/Espresso-Recipe-Forum" target="_blank">GitHub</a>
