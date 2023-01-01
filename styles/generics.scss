@@ -67,10 +67,14 @@
 
   pre {
     @apply my-10 overflow-scroll border border-darker-grey bg-slate-100 p-8 dark:border-white dark:bg-slate-800;
+
+    code {
+      @apply border-0 p-0;
+    }
   }
 
   code {
-    @apply text-xs sm:text-sm;
+    @apply border border-darker-grey bg-slate-100 px-2 py-1 text-xs dark:border-white dark:bg-slate-800 sm:text-sm;
   }
 }
 
