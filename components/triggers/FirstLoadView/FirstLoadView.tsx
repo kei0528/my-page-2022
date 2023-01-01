@@ -24,10 +24,13 @@ export const FirstLoadView = React.memo(() => {
 
   return (
     <main className="bg-black p-5 sm:p-8 portrait:h-realMaxVh landscape:h-realMaxVh">
+      <h1 className="hidden">
+        Hej! I&apos;m Keisuke - a frontend developer, coffee enthusiast and father of two energetic sons!
+      </h1>
       <div className="mx-auto mt-[10vh] max-w-page">
-        <p>
+        <div>
           <GameMessage message={message.current} />
-        </p>
+        </div>
         <ul
           style={{ animationDelay: `${message.current.length / 15 + 1}s` }}
           className="message-anime mt-10 flex w-fit flex-col gap-4 border border-b-4 border-r-4 border-white py-8 px-12"
