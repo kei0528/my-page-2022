@@ -18,7 +18,7 @@
 <p>The first game I ever played was Pokemon Ruby and it took me into the digital world. If this game had not existed, I probably wouldn't have become a programmer! Pokemon Ruby is my roots as a programmer.</p>
 
 <h3>How long did you spend to develop this website?</h3>
-<p>It took about 2 - 3 weeks, total 65 hours from design to hosting. But you know, the most hardest task was writing text about me :D </p>
+<p>It took about 2 - 3 weeks, total 65 hours from design to hosting. But the task that I spend most time was writing text about me. </p>
 <p>I'm still working on this project to add more features and making fixes.</p>
 <p>Here in this badge below, you can see how many time I spend for this project.</p>
 

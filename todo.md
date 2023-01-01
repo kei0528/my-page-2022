@@ -19,7 +19,6 @@
 
 ## Features
 
-- [ ] Use @next/font/local to import fonts
 - [ ] Let's animate header title
 - [ ] Add Search / Sort function to blog page
 - [ ] i18n
@@ -62,3 +61,4 @@
 - [x] nav to about me page from first game option
 - [x] Create sound off button
 - [x] Write about me
+- [x] Use @next/font/local to import fonts - importing via @fontface is faster
