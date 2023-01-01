@@ -98,7 +98,7 @@ Under app directory, it seems not able to create APIs like in pages/api. I’m n
 
 In this project, the functions for blog and contact-form are under pages/api directory.
 
-All blog posts are stored inside the public folder as markdown files and by making a GET request to api/blog, these data will be processed and delivered to the frontend. This tutorial helped me a lot →
+All blog posts are stored inside the public folder as markdown files and by making a GET request to api/blog, these data will be processed and delivered to the frontend. This tutorial helped me a lot → https://www.youtube.com/watch?v=MrjeefD8sac
 
 For sending mail, I just need to do a POST request to /api/mail. Nodemailer processes the request and sends mail to my mailbox.
 
