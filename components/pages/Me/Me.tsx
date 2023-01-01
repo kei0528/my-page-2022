@@ -74,7 +74,8 @@ const Me = () => {
           </p>
           <p>
             I love programming and can’t stop learning it. Maybe at some point, I return back to the coffee industry -
-            but before doing that, I have still so many ideas that I want to try with programming!
+            but before doing that, I have still so many ideas that I want to try with programming. Keep learning,
+            hard-working and give always my best!
           </p>
         </article>
       </BaseMainLayout>
