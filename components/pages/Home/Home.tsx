@@ -16,17 +16,18 @@ import { particles } from './particles';
 const Home = () => {
   const mainRef = useRef<HTMLElement>(null);
   const messageRef = useRef<HTMLParagraphElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
-  const lifeGaugeRef = useRef<HTMLDivElement>(null);
   const gbRef = useRef<HTMLDivElement>(null);
   const { userSetted } = useSelector<AppState>((state) => state.setting) as SettingType;
-  const { plot, currPlot, lifeGauge, particlesInit } = useCompState({
+  const { plot, currPlot, lifeGauge, keisukeStatus, particlesInit } = useCompState({
     messageRef,
     mainRef,
     gbRef,
-    imageRef,
-    lifeGaugeRef,
   });
+
+  const keisukeStatusClassNames = {
+    ATTACKED: s.attacked,
+    FAINTED: s.fainted,
+  };
 
   if (!userSetted) {
     return <FirstLoadView />;
@@ -40,18 +41,24 @@ const Home = () => {
         >
           <Particles id="particles-bg" init={particlesInit} options={particles} />
           <div
-            className={`${s.gb} mx-5 h-[80vh] max-h-[480px] w-full max-w-3xl overflow-hidden rounded-md`}
+            className={`${s.gb} ${
+              keisukeStatus !== null && keisukeStatusClassNames[keisukeStatus]
+            } mx-5 h-[80vh] max-h-[480px] w-full max-w-3xl overflow-hidden rounded-md`}
             ref={gbRef}
           >
             <div className={s.wrapper}>
               <GameLifeGauge
-                className={s.life_gauge}
+                className={`${s.life_gauge} ${keisukeStatus !== null && keisukeStatusClassNames[keisukeStatus]}`}
                 lifeMax={lifeGauge.max}
                 lifeCurr={lifeGauge.curr}
-                ref={lifeGaugeRef}
               />
-              <div className={s.image_wrapper} ref={imageRef}>
-                <Image src="/assets/images/Avatar_Kei02.webp" fill className={s.img} alt="" />
+              <div className={s.image_wrapper}>
+                <Image
+                  src="/assets/images/Avatar_Kei02.webp"
+                  fill
+                  className={`${s.img} ${keisukeStatus !== null && keisukeStatusClassNames[keisukeStatus]}`}
+                  alt=""
+                />
               </div>
               {!plot[currPlot].options ? (
                 <GameMessageBox

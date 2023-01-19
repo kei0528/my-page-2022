@@ -8,7 +8,7 @@ const blogHandler = (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const files = fs.readdirSync(path.join(process.cwd() + '/public/posts'));
 
-    const proceccedPosts = files.map((filename) => {
+    const processedPosts = files.map((filename) => {
       const slug = filename.replace('.md', '');
       const markdownWithMeta = fs.readFileSync(path.join(process.cwd() + '/public/posts', filename), 'utf-8');
       const { data: frontmatter } = matter(markdownWithMeta);
@@ -18,7 +18,7 @@ const blogHandler = (req: NextApiRequest, res: NextApiResponse) => {
     const { keywordSearch } = req.query;
     if (typeof keywordSearch !== 'string') throw Error('Keyword must be string.');
 
-    const allPosts = proceccedPosts as BlogPostType[];
+    const allPosts = processedPosts as BlogPostType[];
     const keywordToLowercase = keywordSearch.toLowerCase();
 
     const targetPosts =

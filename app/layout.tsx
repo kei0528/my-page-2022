@@ -1,4 +1,3 @@
-'use client';
 import 'modern-css-reset';
 import '../styles/globals.scss';
 import '../styles/generics.scss';
@@ -6,16 +5,10 @@ import { SideNav } from '../components/triggers/SideNav';
 import { GlobalMenu } from '../components/triggers/GlobalMenu';
 import { Provider } from '../components/triggers/Provider';
 import { isDarkmode } from '../statics/conditions';
-import { useEffect } from 'react';
 import { Analytics } from '../components/triggers/Analytics';
+import { DarkModeSwitcher } from '../components/triggers/DarkModeSwitcher';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  useEffect(() => {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.querySelector('html')!.classList.add('dark');
-    }
-  }, []);
-
   return (
     <html lang="en" data-lt-installed={true} className={isDarkmode ? 'dark' : ''}>
       <head>
@@ -43,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <GlobalMenu />
           {children}
           <Analytics />
+          <DarkModeSwitcher />
         </Provider>
       </body>
     </html>

@@ -7,7 +7,11 @@ thumbnail: '/blog/images/budde-kaffee.webp'
 
 This is the website of the café - called "Budde Kaffee", where I worked before. I loved working there and the owners are really nice. They supported me and my family so much from the beginning to the end, even when the café was financially in crisis because of the corona pandemic. I always have in mind that I want to return them back, and this project is a part of it.
 
-When I started to learn programming two years ago in 2020, creating a website for Budde Kaffee was my first personal project. I made the page with a simple setup - HTML, CSS and vanilla JavaScript. This [website](https://buddekaffee.de) will be still used, however, it's time for the update. This is the [updated one](https://buddekaffee-2022.vercel.app).
+When I started to learn programming two years ago in 2020, creating a website for Budde Kaffee was my first personal project. I made the page with a simple setup - HTML, CSS and vanilla JavaScript.
+Here's to compare↓
+
+- Ver. 2020 -> <a href="https://buddekaffee.github.io/buddekaffee" target="_blank">https://buddekaffee.github.io/buddekaffee</a>
+- Ver. 2022 -> <a href="https://buddekaffee.de" target="_blank">https://buddekaffee.de</a>
 
 <img src="/blog/images/budde-website-screenshot.webp">
 

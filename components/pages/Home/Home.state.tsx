@@ -21,14 +21,10 @@ export const useCompState = ({
   messageRef,
   mainRef,
   gbRef,
-  imageRef,
-  lifeGaugeRef,
 }: {
   gbRef: RefObject<HTMLDivElement>;
   messageRef: RefObject<HTMLParagraphElement>;
   mainRef: RefObject<HTMLElement>;
-  lifeGaugeRef: RefObject<HTMLDivElement>;
-  imageRef: RefObject<HTMLDivElement>;
 }) => {
   const dispatch = useDispatch();
   const { playGameBgm, stopGameBgm, playAttackSound, playFaintedSound, playGameOverBgm, stopGameOverBgm } = useSound();
@@ -36,6 +32,7 @@ export const useCompState = ({
   const [lifeGauge, setLifeGauge] = useState<{ max: number; curr: number }>({ max: 100, curr: 100 });
   const [currPlot, setCurrPlot] = useState<number>(0);
   const [messageRendered, setMessageRendered] = useState(false);
+  const [keisukeStatus, setKeisukeStatus] = useState<'FAINTED' | 'ATTACKED' | null>(null);
   const router = useRouter();
   const plot: PlotType[] = useMemo(
     () => [
@@ -60,21 +57,18 @@ export const useCompState = ({
             label: 'Fight',
             handler: () => {
               playAttackSound();
-              const imgElm = imageRef.current!.querySelector('img');
-              imgElm!.classList.add('attacked');
+              setKeisukeStatus('ATTACKED');
               setCurrPlot(7);
 
               const damageAmount = Math.floor(Math.random() * 15) + 30;
               // After attack
               setTimeout(() => {
-                imgElm!.classList.remove('attacked');
+                setKeisukeStatus(null);
                 setLifeGauge((state) => {
                   const lifeGaugeUpdatged = state.curr - damageAmount;
                   if (lifeGaugeUpdatged <= 0) {
                     playFaintedSound();
-                    gbRef!.current?.classList.add('fainted');
-                    lifeGaugeRef!.current?.classList.add('fainted');
-                    imgElm!.classList.add('fainted');
+                    setKeisukeStatus('FAINTED');
                   }
 
                   return {
@@ -139,7 +133,7 @@ export const useCompState = ({
         returnToOption: true,
       },
     ],
-    [lifeGauge.curr, playAttackSound, imageRef, router, playFaintedSound, gbRef, lifeGaugeRef]
+    [lifeGauge.curr, playAttackSound, router, playFaintedSound]
   );
 
   const toNextPlot = () => {
@@ -260,5 +254,5 @@ export const useCompState = ({
     };
   }, [onScreenClick, mainRef]);
 
-  return { currPlot, plot, lifeGauge, particlesInit };
+  return { currPlot, plot, lifeGauge, particlesInit, keisukeStatus };
 };
