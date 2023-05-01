@@ -1,6 +1,5 @@
 import NextLink from 'next/link';
 import { ReactElement } from 'react';
-import { BaseMainLayout } from '../../components/uis/BaseMainLayout';
 
 async function getYear() {
   return new Date().getFullYear();

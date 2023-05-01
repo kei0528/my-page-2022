@@ -11,14 +11,13 @@ const blogHandler = (req: NextApiRequest, res: NextApiResponse) => {
   dayjs.extend(customParseFormat);
 
   const files = fs.readdirSync(path.join(process.cwd() + '/public/posts'));
-
-  const proceccedPosts = files.map((filename) => {
+  const processedPosts = files.map((filename) => {
     const slug = filename.replace('.md', '');
     const markdownWithMeta = fs.readFileSync(path.join(process.cwd() + '/public/posts', filename), 'utf-8');
     const { data: frontmatter, content } = matter(markdownWithMeta);
     return { slug, frontmatter, content };
   }) as unknown;
-  const posts = proceccedPosts as BlogPostType[];
+  const posts = processedPosts as BlogPostType[];
 
   const postsSortedByLatest = posts.sort((a, b) => {
     const dateUnix_a = dayjs(a.frontmatter.date, 'DD.MM.YYYY').unix();
