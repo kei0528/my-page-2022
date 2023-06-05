@@ -136,6 +136,12 @@ export const useCompState = ({
     [lifeGauge.curr, playAttackSound, router, playFaintedSound]
   );
 
+  useEffect(() => {
+    fetch('https://apps-notion-api.vercel.app/api/notion/database/read/de529f6f8c294b9d84587168f97a5653')
+      .then((res) => res.json())
+      .then((data) => console.log('data', data));
+  });
+
   const toNextPlot = () => {
     setCurrPlot((state) => state + 1);
   };
